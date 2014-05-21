@@ -1,4 +1,6 @@
 class UsersController < ApplicationController
+  # before_action :require_current_user!, :except => [:create]
+
   def index
     @users = User.all
     render :json => @users
@@ -7,7 +9,8 @@ class UsersController < ApplicationController
   def create
     @user = User.new(user_params)
     if @user.save
-      redirect_to users_url
+      login!(@user)
+      redirect_to user_url(@user)
     else
       render :json => @user.errors.full_messages
     end
@@ -16,6 +19,11 @@ class UsersController < ApplicationController
   def new
     @user = User.new
     render :new
+  end
+
+  def show
+    @user = User.find(params[:id])
+    render :json => @user
   end
 
   private
