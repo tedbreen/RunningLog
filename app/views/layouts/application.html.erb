@@ -7,15 +7,7 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-  <header>
-    <% if !current_user.nil? %>
-    <ul>
-      <li><%= current_user.email %> is logged in</li>
-      <li><%= button_to("Log out", session_url, :method => :delete) %></li>
-    </ul>
-    <% end %>
-  </header>
-
+  <%= render 'layouts/navbar' %>
 
 <%= yield %>
 

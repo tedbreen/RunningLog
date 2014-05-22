@@ -1,0 +1,27 @@
+
+
+
+
+
+<nav class="navbar navbar-default">
+  <div class="container">
+
+    <div class="navbar-header">
+      <a class="navbar-brand" href="/">RunLog</a>
+    </div>
+
+    <div class="nav navbar-right">
+      <% if !current_user.nil? %>
+        <div id="log-out">
+          <%= current_user.email %>
+          <%= button_to "Log out", session_url, :method => :delete %>
+        </div>
+      <% else %>
+        <button type="button" class="btn btn-default">
+          <a href="/session/new">Log in</a>
+        </button>
+      <% end %>
+    </div>
+
+  </div>
+</nav>
