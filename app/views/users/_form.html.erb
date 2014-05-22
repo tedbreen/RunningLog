@@ -3,17 +3,36 @@
          name="authenticity_token"
          value="<%= form_authenticity_token %>">
 
-  <label for="fieldemail">Email</label>
-  <input type="text"
-         name="user[email]"
-         value=""
-         id="field-email">
+  <label for="user-email">Email</label>
+  <input type="text" name="user[email]" id="user-email">
 
-  <label for="field-password">Password</label>
-  <input type="password"
-         name="user[password]"
-         value=""
-         id="field-password">
+  <label for="user-password">Password</label>
+  <input type="password" name="user[password]" id="user-password">
+
+  <br>
+
+  <label for="user-fname">First name</label>
+  <input type="text" name="user[fname]" id="user-fname">
+
+  <label for="user-lname">Last name</label>
+  <input type="text" name="user[lname]" id="user-lname">
+
+  <label for="user-gender">Gender</label>
+  <select name="user[gender]" id="user-gender">
+    <option value="0"> </option>
+    <option value="1">M</option>
+    <option value="2">F</option>
+  </select>
+
+  <br>
+
+  <label for="user-city">City</label>
+  <input type="text" name="user[city]" id="user-city">
+
+  <label for="user-state">State</label>
+  <input type="text" name="user[state]" id="user-state">
+
+  <br>
 
   <input type="submit"
          value="Submit">

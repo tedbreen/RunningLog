@@ -8,6 +8,11 @@
 #  created_at      :datetime
 #  updated_at      :datetime
 #  session_token   :string(255)      not null
+#  gender          :integer
+#  city            :string(255)
+#  state           :string(255)
+#  fname           :string(255)
+#  lname           :string(255)
 #
 
 class User < ActiveRecord::Base
@@ -19,6 +24,7 @@ class User < ActiveRecord::Base
   validates :password_digest, :presence => true
   validates :password, :length => { :minimum => 1, :allow_nil => true }
   validates :session_token, :presence => true
+  validates :gender, :presence => true
 
 
   def password=(password)

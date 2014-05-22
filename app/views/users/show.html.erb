@@ -1,0 +1,17 @@
+<h2>Show page for <%= @user.fname %></h2>
+
+<ul>
+  <% if @user.fname && @user.lname %>
+    <li><%= @user.fname %> <%= @user.lname %></li>
+  <% end %>
+
+  <% if @user.gender == 1 %>
+    <li>Gender: Male</li>
+  <% elsif @user.gender == 2 %>
+    <li>Gender: Female</li>
+  <% end %>
+
+  <% if @user.city && @user.state %>
+    <li>Home: <%= @user.city %>, <%= @user.state %></li>
+  <% end %>
+</ul>
