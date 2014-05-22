@@ -1,27 +1,35 @@
-
-
-
-
-
 <nav class="navbar navbar-default">
-  <div class="container">
 
-    <div class="navbar-header">
-      <a class="navbar-brand" href="/">RunLog</a>
-    </div>
-
-    <div class="nav navbar-right">
-      <% if !current_user.nil? %>
-        <div id="log-out">
-          <%= current_user.email %>
-          <%= button_to "Log out", session_url, :method => :delete %>
-        </div>
-      <% else %>
-        <button type="button" class="btn btn-default">
-          <a href="/session/new">Log in</a>
-        </button>
-      <% end %>
-    </div>
-
+  <div class="navbar-brand col-xs-2">
+    <a href="/">RunLog</a>
   </div>
+
+  <div class="col-xs-5"></div>
+
+  <div class="col-xs-3">
+    <% if !current_user.nil? %>
+      <p class="text-right"><%= current_user.email %></p>
+    <% end %>
+  </div>
+
+
+  <div class="col-xs-2">
+    <% if !current_user.nil? %>
+      <form role="form" action="<%= session_url %>" method="post">
+        <input  name="_method" type="hidden" value="delete">
+        <input  type="hidden"
+                name="authenticity_token"
+                value="<%= form_authenticity_token %>">
+        <button type="submit" class="btn btn-danger">Sign out</button>
+      </form>
+    <% else %>
+      <form role="form" action="<%= new_session_url %>" method="get">
+        <button type="submit" class="btn btn-primary">Sign in</button>
+      </form>
+    <% end %>
+  </div>
+
+
 </nav>
+
+
