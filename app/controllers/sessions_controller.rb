@@ -12,13 +12,13 @@ class SessionsController < ApplicationController
       render :json => "Incorrect email and/or password"
     else
       login!(@user)
-      redirect_to user_url(@user)
+      redirect_to root_url
     end
   end
 
   def destroy
     logout!
-    redirect_to new_session_url
+    redirect_to root_url
   end
 
 end
