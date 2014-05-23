@@ -1,4 +1,5 @@
 <div class="container">
+  <h1>Add a run</h1>
   <form action="<%= runs_url %>" method="post">
     <input type="hidden"
              name="authenticity_token"
@@ -9,9 +10,14 @@
 
     <br>
 
+    <h3>Name of run<h3>
+    <input type="text" name="run[title]" value="text title">
+
+    <br>
+
     <h3>Location</h3>
-    <label>City<input type="text" name="run[city]" value="Boston"></label>
-    <label>State<input type="text" name="run[state]" value="MA"></label
+    <label>City<input type="text" name="run[city]" value="San Francisco"></label>
+    <label>State<input type="text" name="run[state]" value="CA"></label
 
     <br>
 
@@ -30,15 +36,20 @@
 
     <br>
 
-    <h3>Duration</h3>
+    <h3>Duration (optional)</h3>
     <label>Hours<input type="text" name="run[d_hr]" value="2"></label>
     <label>Minutes<input type="text" name="run[d_min]" value="51"></label>
     <label>Seconds<input type="text" name="run[d_sec]" value="45"></label>
 
     <br>
 
-    <h3>Sneaker</h3>
+    <h3>Sneaker (optional)</h3>
     <input type="text" name="run[sneaker_id]">
+
+    <br>
+
+    <h3>Description (optional)<h3>
+    <textarea name="run[description]" value="blah blah blah"></textarea>
 
     <br>
 

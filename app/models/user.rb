@@ -26,6 +26,13 @@ class User < ActiveRecord::Base
   validates :session_token, :presence => true
   validates :gender, :presence => true
 
+  has_many(
+    :runs,
+    :class_name => "Run",
+    :foreign_key => :user_id,
+    :inverse_of => :user
+  )
+
 
   def password=(password)
     @password = password  # this is for minimum length

@@ -11,23 +11,25 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140523040040) do
+ActiveRecord::Schema.define(version: 20140523182059) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "runs", force: true do |t|
-    t.integer  "user_id",    null: false
-    t.time     "start_time", null: false
-    t.integer  "run_type",   null: false
-    t.string   "city",       null: false
-    t.string   "state",      null: false
+    t.integer  "user_id",     null: false
+    t.time     "start_time",  null: false
+    t.integer  "run_type",    null: false
+    t.string   "city",        null: false
+    t.string   "state",       null: false
     t.integer  "sneaker_id"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.float    "duration"
-    t.float    "distance"
-    t.date     "start_date", null: false
+    t.date     "start_date",  null: false
+    t.string   "title",       null: false
+    t.text     "description"
+    t.float    "distance",    null: false
   end
 
   add_index "runs", ["city"], name: "index_runs_on_city", using: :btree

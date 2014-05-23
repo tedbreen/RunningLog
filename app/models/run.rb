@@ -2,18 +2,20 @@
 #
 # Table name: runs
 #
-#  id         :integer          not null, primary key
-#  user_id    :integer          not null
-#  start_time :time             not null
-#  run_type   :integer          not null
-#  city       :string(255)      not null
-#  state      :string(255)      not null
-#  sneaker_id :integer
-#  created_at :datetime
-#  updated_at :datetime
-#  duration   :float
-#  distance   :float
-#  start_date :date             not null
+#  id          :integer          not null, primary key
+#  user_id     :integer          not null
+#  start_time  :time             not null
+#  run_type    :integer          not null
+#  city        :string(255)      not null
+#  state       :string(255)      not null
+#  sneaker_id  :integer
+#  created_at  :datetime
+#  updated_at  :datetime
+#  duration    :float
+#  start_date  :date             not null
+#  title       :string(255)      not null
+#  description :text
+#  distance    :float            not null
 #
 
 class Run < ActiveRecord::Base
@@ -25,6 +27,11 @@ class Run < ActiveRecord::Base
   validates :city, :presence => true
   validates :state, :presence => true
 
-
+  belongs_to(
+    :user,
+    :class_name => "User",
+    :foreign_key => :user_id,
+    :inverse_of => :runs
+  )
 
 end

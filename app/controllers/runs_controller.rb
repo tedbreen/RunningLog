@@ -35,6 +35,16 @@ class RunsController < ApplicationController
     end
   end
 
+  def show
+    @run = Run.find(params[:id])
+    render :json => @run
+  end
+
+  def index
+    @runs = User.find(params[:user_id]).runs
+    render :json => @runs
+  end
+
   private
 
   def run_params
