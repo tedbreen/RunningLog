@@ -1,0 +1,29 @@
+# == Schema Information
+#
+# Table name: runs
+#
+#  id         :integer          not null, primary key
+#  user_id    :integer          not null
+#  start_time :time             not null
+#  run_type   :integer          not null
+#  city       :string(255)      not null
+#  state      :string(255)      not null
+#  sneaker_id :integer
+#  created_at :datetime
+#  updated_at :datetime
+#  duration   :float
+#  distance   :float
+#  start_date :date             not null
+#
+
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+# This model initially had no columns defined.  If you add columns to the
+# model remove the '{}' from the fixture names and add the columns immediately
+# below each fixture, per the syntax in the comments below
+#
+one: {}
+# column: value
+#
+two: {}
+#  column: value
