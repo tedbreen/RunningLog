@@ -1,10 +1,10 @@
 Rails.application.routes.draw do
-  root to: 'static_pages#root'
+  root :to => 'static_pages#root'
 
-  resources :users, :only => [:new, :create, :index, :show] do
-    resources :runs, :only => [:index, :show]
+  namespace :api do
+    resources :runs, :only => [:new, :create, :index, :show]
   end
 
-  resources :runs, :only => [:new, :create]
+  resources :users, :only => [:new, :create, :index, :show]
   resource :session, :only => [:new, :create, :destroy]
 end
