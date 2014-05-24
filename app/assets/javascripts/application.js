@@ -16,7 +16,7 @@
 //= require bootstrap
 //= require underscore
 //= require backbone
-//= require run
+//= require strava
 //= require_tree ./models
 //= require_tree ./collections
 //= require_tree ../templates

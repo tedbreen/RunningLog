@@ -1,7 +1,7 @@
-window.Run.Views.RunsIndex = Backbone.View.extend({
+window.Strava.Views.RunsIndex = Backbone.View.extend({
   template: JST['runs/index'],
 
-  initialize: function(options) {
+  initialize: function() {
     this.listenTo(
       this.collection,
       "sync",

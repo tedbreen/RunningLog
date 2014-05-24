@@ -1,3 +1,3 @@
-window.Run.Models.Run = Backbone.Model.extend({
+window.Strava.Models.Run = Backbone.Model.extend({
   urlRoot: "/api/runs"
 });
