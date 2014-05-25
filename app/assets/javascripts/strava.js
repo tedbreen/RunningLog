@@ -5,17 +5,14 @@ window.Strava = {
   Routers: {},
 
   initialize: function () {
-    alert('backbone started!')
     var $rootEl = $('#content');
-    new Strava.Routers.AppRouter({
-      rootEl: $rootEl
-    });
+    new Strava.Routers.AppRouter();
     Backbone.history.start();
   }
 };
 
 $(function() {
-  if($('#content').length !== 0) {
+  if($('#content').length !== 0) {  // empty <div id="content"> means logged out
     Strava.initialize();
   }
 });

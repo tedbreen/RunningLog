@@ -3,12 +3,7 @@ window.Strava.Routers.AppRouter = Backbone.Router.extend({
     "" : "runsIndex"
   },
 
-  initialize: function(options) {
-    // debugger;
-    this.$rootEl = options.rootEl;
-  },
-
-  runsIndex: function(){
+  runsIndex: function() {
     var indexView = new Strava.Views.RunsIndex({
       collection: Strava.runs
     });
@@ -21,6 +16,7 @@ window.Strava.Routers.AppRouter = Backbone.Router.extend({
       this._currentView.remove();
     }
     this._currentView = view;
-    this.$rootEl.html( this._currentView.$el );
+    this._currentView.render();
+    $('#content').html( this._currentView.$el );
   }
 });

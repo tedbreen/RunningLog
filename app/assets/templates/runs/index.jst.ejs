@@ -1,1 +1,20 @@
-<h1>Backbone Index View</h1>
+<header>
+  <h1>Runs Index View</h1>
+</header>
+  <% runs.each( function(run) { %>
+
+    <div class="row">
+
+      <div class="col-xs-3">
+        <div>User goes here</div>
+        <div><%= justTime( run.escape('start_time') ) %></div>
+      </div>
+
+      <div class="col-xs-9">
+        <div><%= run.escape('title') %></div>
+        <div><%= run.escape('distance') %></div>
+      </div>
+
+    </div>
+
+  <%  }) %>
