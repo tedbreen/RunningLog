@@ -1,20 +1,29 @@
 <header>
   <h1>Runs Index View</h1>
 </header>
+
   <% runs.each( function(run) { %>
 
-    <div class="row">
+  <div class="row" id="run-feed">
 
-      <div class="col-xs-3">
-        <div>User goes here</div>
-        <div><%= justTime( run.escape('start_time') ) %></div>
-      </div>
+    <div class="col-xs-2">
+      <div><%= run.escape( 'start_date' ) %></div>
+      <div><%= justTime( run.escape('start_time') ) %></div>
+    </div>
 
-      <div class="col-xs-9">
-        <div><%= run.escape('title') %></div>
-        <div><%= run.escape('distance') %></div>
+    <div class="col-xs-3">
+      <div>
+        <%= runs.users().get( run.escape('user_id') ).escape('fname') + " " +
+            runs.users().get( run.escape('user_id') ).escape('lname') %>
       </div>
 
     </div>
+
+    <div class="col-xs-7">
+      <div><%= run.escape( 'title' ) %></div>
+      <div><%= run.escape( 'distance' ) + " mi"%></div>
+    </div>
+
+  </div>
 
   <%  }) %>

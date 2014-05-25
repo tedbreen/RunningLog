@@ -1,14 +1,27 @@
 window.Strava.Routers.AppRouter = Backbone.Router.extend({
   routes: {
-    "" : "runsIndex"
+    ""          : "runsIndex",
+    "users/:id" : "userShow"
   },
 
   runsIndex: function() {
     var indexView = new Strava.Views.RunsIndex({
-      collection: Strava.runs
+      collection: Strava.runs,
     });
     Strava.runs.fetch();
+    Strava.runs.users().fetch();
+
     this._swapView( indexView );
+  },
+
+  userShow: function(id) {
+    var showModel = Strava.users.getOrFetch(id);
+
+    var showView = new Strava.Views.UserShow({
+      model: showModel
+    });
+
+    this._swapView( showView );
   },
 
   _swapView: function(view) {

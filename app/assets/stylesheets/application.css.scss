@@ -15,10 +15,16 @@
  */
 @import "bootstrap";
 
-div.container {
+div#application {
   border-style: dashed;
 }
 
-div.row {
+div#content {
   border-style: dashed;
+  border-color: red;
+}
+
+div#run-feed {
+  border-style: dotted;
+  border-color: blue;
 }
