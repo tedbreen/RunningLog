@@ -1,4 +1,4 @@
-<h2><%= run.escape( 'title' ) %></h2>
+<h2><%= run.escape( 'title' ) + " -- " + run.runType() %></h2>
 <h4>by
   <a href="#/users/<%= run.getUserId() %>">
     <%= run.users().getOrFetch( run.getUserId() ).get('fname') + " " +
@@ -18,7 +18,7 @@
   </div>
 
   <div>Distance: <%= run.escape( 'distance' ) + " mi"%></div>
-
+  <br>
   <div><%='"' + run.escape( 'description' ) + '"'%></div>
 
 </div>

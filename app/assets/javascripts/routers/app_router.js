@@ -2,7 +2,9 @@ window.Strava.Routers.AppRouter = Backbone.Router.extend({
   routes: {
     ""          : "runsIndex",
     "users/:id" : "userShow",
+    "runs/new"  : "runNew",
     "runs/:id"  : "runShow"
+
   },
 
   runsIndex: function() {
@@ -35,6 +37,11 @@ window.Strava.Routers.AppRouter = Backbone.Router.extend({
 
     this._swapView( runView );
 
+  },
+
+  runNew: function () {
+    var newView = new Strava.Views.RunNew();
+    this._swapView( newView );
   },
 
   _swapView: function(view) {

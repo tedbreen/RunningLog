@@ -4,11 +4,17 @@
     <a href="/#">Straava</a>
   </div>
 
-  <div class="col-xs-5"></div>
+  <div class="navbar-brand col-xs-2">
+    <a href="/#/runs/new">New run</a>
+  </div>
+
+  <div class="col-xs-3"></div>
 
   <div class="col-xs-3">
     <% if !current_user.nil? %>
-      <p class="text-right"><%= current_user.email %></p>
+      <a href="/#users/<%= current_user.id %>">
+        <p class="text-right"><%= current_user.email %></p>
+      </a>
     <% end %>
   </div>
 

@@ -2,7 +2,7 @@ window.Strava.Views.RunsIndex = Backbone.View.extend({
   template: JST['runs/index'],
 
   initialize: function(options) {
-    this.listenTo( this.collection, "sync", this.render );
+    this.listenTo( this.collection, "sync add", this.render );
     this.listenTo( this.collection.users(), "sync", this.render );
   },
 
