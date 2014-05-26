@@ -31,13 +31,13 @@ date1 = Date.new( 2014, 4, 21 )
 r1 = Run.create(user_id: 2,
                 start_time: time1,
                 run_type: 3,
-                city: "Hopkinton",
-                state: "MA",
+                city: "Daly City",
+                state: "CA",
                 start_date: date1,
-                title: "Boston Marathon",
-                description: "Boston Strong!",
-                distance: 26.2,
-                duration: 10305
+                title: "Where is the beach?",
+                description: "This wasn't so good",
+                distance: 11.2,
+                duration: 4704
 )
 
 time2 = Time.new(2000,1,1,8,0, 0, "-08:00")
