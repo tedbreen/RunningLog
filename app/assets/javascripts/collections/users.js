@@ -18,4 +18,4 @@ window.Strava.Collections.Users = Backbone.Collection.extend({
   }
 })
 
-window.Strava.users = new Strava.Collections.Users();
+window.Strava.Collections.users = new Strava.Collections.Users();

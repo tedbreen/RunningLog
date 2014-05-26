@@ -12,15 +12,13 @@
     </div>
 
     <div class="col-xs-3">
-      <div>
-        <%= runs.users().get( run.escape('user_id') ).escape('fname') + " " +
-            runs.users().get( run.escape('user_id') ).escape('lname') %>
-      </div>
-
+      <a href="#/users/<%= run.escape( 'user_id' ) %>">
+        User <%= run.escape( 'user_id' ) %>
+      </a>
     </div>
 
     <div class="col-xs-7">
-      <div><%= run.escape( 'title' ) %></div>
+      <div><a href="#"><%= run.escape( 'title' ) %></a></div>
       <div><%= run.escape( 'distance' ) + " mi"%></div>
     </div>
 

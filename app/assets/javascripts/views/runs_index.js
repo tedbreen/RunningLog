@@ -3,12 +3,13 @@ window.Strava.Views.RunsIndex = Backbone.View.extend({
 
   initialize: function(options) {
     this.listenTo( this.collection, "sync", this.render );
-    this.listenTo( this.collection.users(), "sync", this.render );
+    // this.listenTo( this.collection.users(), "sync", this.render );
   },
 
   render: function() {
     var renderedContent = this.template({
       runs: this.collection,
+
       justTime: function(time){
         if (time[11] === '0') {
           return time.slice(12, 16);
