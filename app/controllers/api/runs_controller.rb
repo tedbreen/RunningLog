@@ -30,6 +30,8 @@ class Api::RunsController < ApplicationController
 
     @run.sneaker_id = @p[:sneaker_id] unless @p[:sneaker_id].empty?
 
+    @run.description = @p[:description]
+
     if @run.save
       render :json => @run
     else
@@ -52,7 +54,8 @@ class Api::RunsController < ApplicationController
   def run_params
     params.require(:run).permit(:d_hr, :d_min, :d_sec, :sneaker_id,
                                 :run_type, :distance, :city, :state,
-                                :year, :mon, :day, :hr, :min, :offset
+                                :year, :mon, :day, :hr, :min, :offset,
+                                :description
     )
   end
 
