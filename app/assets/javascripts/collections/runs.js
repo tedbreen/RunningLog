@@ -21,6 +21,13 @@ window.Strava.Collections.Runs = Backbone.Collection.extend({
       });
       return model;
     }
+  },
+
+  users: function () {
+    if (!this._users) {
+      this._users = new Strava.Collections.Users();
+    }
+    return this._users;
   }
 
 });

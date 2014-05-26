@@ -6,7 +6,7 @@ window.Strava.Views.RunShow = Backbone.View.extend({
   },
 
   render: function () {
-    debugger;
+
     var renderedContent = this.template({
       run: this.model,
 
@@ -15,7 +15,8 @@ window.Strava.Views.RunShow = Backbone.View.extend({
           return time.slice(12, 16);
         }
         return time.slice(11, 16);
-      }
+      },
+
     });
     this.$el.html( renderedContent );
     return this;

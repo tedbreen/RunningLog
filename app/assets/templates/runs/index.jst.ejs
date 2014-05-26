@@ -14,10 +14,10 @@
     <div class="col-xs-3">
       <div>
         <a href="#/users/<%= run.escape( 'user_id' ) %>">
-          User <%= run.escape( 'user_id' ) %>
+    <%= runs.users().getOrFetch( run.getUserId() ).get('fname') + " " +
+        runs.users().getOrFetch( run.getUserId() ).get('lname') %>
         </a>
       </div>
-      <div>Hello Testing</div>
     </div>
 
     <div class="col-xs-7">
