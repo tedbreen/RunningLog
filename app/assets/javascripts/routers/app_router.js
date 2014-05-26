@@ -11,7 +11,6 @@ window.Strava.Routers.AppRouter = Backbone.Router.extend({
     });
 
     Strava.Collections.runs.fetch();
-    Strava.Collections.runs.users().fetch();
 
     this._swapView( indexView );
   },

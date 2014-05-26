@@ -1,8 +1,10 @@
 window.Strava.Views.RunShow = Backbone.View.extend({
   template: JST['runs/show'],
 
-  initialize: function () {
+  initialize: function (options) {
     this.listenTo( this.model, "sync", this.render );
+    // maybe this will work...
+    this.listenTo( this.model.users(), "sync", this.render )
   },
 
   render: function () {

@@ -1,12 +1,15 @@
-<h3>
-  <a href="#/users/<%= run.escape( 'user_id' ) %>">
-    User <%= run.escape( 'user_id' ) %>
+<h2><%= run.escape( 'title' ) %></h2>
+<h4>by
+  <a href="#/users/<%= run.getUserId() %>">
+    <%= run.users().getOrFetch( run.getUserId() ).get('fname') + " " +
+    run.users().getOrFetch( run.getUserId() ).get('lname') %>
   </a>
-</h3>
+</h4>
+
+
 
 <div class="row container" id="run-show">
 
-  <h3><%= run.escape( 'title' ) %></h3>
 
   <div><%= run.escape( 'city' ) + ', ' + run.escape( 'state' ) %></div>
 
@@ -15,5 +18,7 @@
   </div>
 
   <div>Distance: <%= run.escape( 'distance' ) + " mi"%></div>
+
+  <div><%='"' + run.escape( 'description' ) + '"'%></div>
 
 </div>
