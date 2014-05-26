@@ -1,0 +1,19 @@
+<h2>
+  <a href="#/users/<%= run.escape( 'user_id' ) %>">
+    User <%= run.escape( 'user_id' ) %>
+  </a>
+</h2>
+
+<div class="row container" id="run-show">
+
+  <h4><%= run.escape( 'title' ) %></h4>
+
+  <div><%= run.escape( 'city' ) + ', ' + run.escape( 'state' ) %></div>
+
+  <div>
+    <%= run.escape( 'start_date' ) %> at <%= justTime( run.escape( 'start_time' ) ) %>
+  </div>
+
+  <div>Distance: <%= run.escape( 'distance' ) + " mi"%></div>
+
+</div>

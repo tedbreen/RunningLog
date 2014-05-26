@@ -4,25 +4,24 @@
 </header>
 
   <% user.runs().each( function(run) { %>
-    <% if ( run.get('user_id') === user.get('id')) { %>
-      <div class="row" id="run-feed">
+    <div class="row container" id="user-run-feed">
+      <% if ( run.get('user_id') === user.get('id')) { %>
+      <div class="col-xs-2">
+        <div><%= run.escape( 'start_date' ) %></div>
+        <div><%= justTime( run.escape( 'start_time' ) ) %></div>
+      </div>
 
-        <div class="col-xs-2">
-          <div><%= run.escape( 'start_date' ) %></div>
-          <div><%= justTime( run.escape( 'start_time' ) ) %></div>
-        </div>
-
-        <div class="col-xs-3">
-          <a href="#/users/<%= run.escape( 'user_id' ) %>">
-            User <%= run.escape( 'user_id' ) %>
+      <div class="col-xs-7">
+        <div>
+          <a href="#/runs/<%= run.escape( 'id' ) %>">
+            <%= run.escape( 'title' ) %>
           </a>
         </div>
 
-        <div class="col-xs-7">
-          <div><a href="#"><%= run.escape( 'title' ) %></a></div>
-          <div><%= run.escape( 'distance' ) + " mi"%></div>
-        </div>
-
+        <div><%= run.escape( 'distance' ) + " mi"%></div>
       </div>
+
+
     <% } %>
+    </div>
   <%  }) %>

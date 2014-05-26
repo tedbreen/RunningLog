@@ -1,13 +1,14 @@
-window.Strava.Views.RunsIndex = Backbone.View.extend({
-  template: JST['runs/index'],
+window.Strava.Views.RunShow = Backbone.View.extend({
+  template: JST['runs/show'],
 
-  initialize: function(options) {
-    this.listenTo( this.collection, "sync", this.render );
+  initialize: function () {
+    this.listenTo( this.model, "sync", this.render );
   },
 
-  render: function() {
+  render: function () {
+    debugger;
     var renderedContent = this.template({
-      runs: this.collection,
+      run: this.model,
 
       justTime: function(time) {
         if (time[11] === '0') {
@@ -15,9 +16,9 @@ window.Strava.Views.RunsIndex = Backbone.View.extend({
         }
         return time.slice(11, 16);
       }
-
     });
     this.$el.html( renderedContent );
     return this;
   }
+
 })

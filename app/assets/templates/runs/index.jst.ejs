@@ -4,7 +4,7 @@
 
   <% runs.each( function(run) { %>
 
-  <div class="row" id="run-feed">
+  <div class="row container" id="index-run-feed">
 
     <div class="col-xs-2">
       <div><%= run.escape( 'start_date' ) %></div>
@@ -12,13 +12,20 @@
     </div>
 
     <div class="col-xs-3">
-      <a href="#/users/<%= run.escape( 'user_id' ) %>">
-        User <%= run.escape( 'user_id' ) %>
-      </a>
+      <div>
+        <a href="#/users/<%= run.escape( 'user_id' ) %>">
+          User <%= run.escape( 'user_id' ) %>
+        </a>
+      </div>
+      <div>Hello Testing</div>
     </div>
 
     <div class="col-xs-7">
-      <div><a href="#"><%= run.escape( 'title' ) %></a></div>
+      <div>
+        <a href="#/runs/<%= run.escape( 'id' ) %>">
+          <%= run.escape( 'title' ) %>
+        </a>
+      </div>
       <div><%= run.escape( 'distance' ) + " mi"%></div>
     </div>
 
