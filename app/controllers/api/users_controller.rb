@@ -12,8 +12,9 @@ class Api::UsersController < ApplicationController
     @user = User.new(user_params)
     if @user.save
       login!(@user)
+      redirect_to root_url
       # redirect_to user_url(@user)
-      render :json => @user
+      # render :json => @user
     else
       render :json => @user.errors.full_messages
     end

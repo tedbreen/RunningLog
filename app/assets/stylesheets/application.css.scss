@@ -15,13 +15,59 @@
  */
 @import "bootstrap";
 
-div#application {
-  border-style: dashed;
+body {
+  background: #f5f5f5;
 }
 
+// main container for everything
 div#content {
+//  border-style: dashed;
+//  border-color: red;
+  background: white;
+}
+
+div.row#user-show {
+  padding-top: 30px;
+}
+
+.navbar {
+  background: white;
+}
+.panel {
+  background: #f7f7f7;
+}
+
+div#feed-col {
+  padding-right: 40px;
+}
+
+div#avatar-col {
+  padding-left: 40px;
+//  border-style: dashed;
+//  border-color: red;
+  #username {
+    font-size: 26px;
+    font-weight: bold;
+  }
+  #location {
+    font-size: 20px;
+    color: gray;
+  }
+}
+
+div.panel#add-run {
+
+  select {
+    font-size: 2em;
+  }
+}
+
+div.panel-title {
+  font-size: 2.2em;
+}
+
+div#application {
   border-style: dashed;
-  border-color: red;
 }
 
 div#run-feed {
@@ -64,8 +110,8 @@ div.right {
 
 // #users/:id
 div#user-show-run {
-  border-style: dashed;
-  border-color: blue;
+//  border-style: dashed;
+//  border-color: blue;
 }
 
 a#user-run-title {

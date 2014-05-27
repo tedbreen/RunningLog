@@ -1,43 +1,53 @@
-<div class="panel panel-default">
-  <div class="panel-body">
-    <div class="row container">
-      <div class="col-xs-4"><img class="avatar js-avatar img-rounded" data-user="5546294" height="200" src="https://avatars3.githubusercontent.com/u/5546294?s=460" width="200"></div>
-      <div class="col-xs-8">
-        <div>
-          <h3><%= user.escape('fname') + " " + user.escape('lname') %></h3>
-        </div>
-        <div>
-          <%= user.escape('city') + ", " + user.escape('state') %>
-        </div>
-      </div>
-    </div>
-  </div>
+<div class="row" id="user-show">
+
+<!-- left column -->
+<div id="avatar-col" class="col-md-3">
+<div><img class="avatar js-avatar img-rounded" data-user="5546294" height="200" src="https://avatars3.githubusercontent.com/u/5546294?s=460" width="200"></div>
+<div id="username"><%= user.escape('fname') + " " + user.escape('lname') %></div>
+<div id="location"><%= user.escape('city') + ", " + user.escape('state') %></div>
+<!-- end of left column div -->
 </div>
 
-
+<!-- right column -->
+<div class="col-md-9" id="feed-col">
 
 <% user.runs().each( function(run) { %>
 <% if ( run.get('user_id') === user.get('id')) { %>
 <div class="panel panel-default" id="user-show-run">
-  <div class="panel-heading">
-    <h3 class="panel-title"><%= run.displayDate() %></h3>
-  </div>
-  <div class="panel-body">
-    <div class="row container">
-      <div class="col-xs-1">
-        <div class="row"><img class="avatar js-avatar" data-user="5546294" height="48" src="https://avatars3.githubusercontent.com/u/5546294?s=460" width="48"></div>
-        <div class="row"><%= justTime( run.escape( 'start_time' ) ) %></div>
-      </div>
-      <div class="col-xs-7">
-        <div><a id="user-run-title" href="#runs/<%= run.escape( 'id' ) %>"><%= run.escape( 'title' ) %></a>
-        </div>
-        <div><%= run.escape( 'distance' ) + " mi"%></div>
-      </div>
-      <div class="col-xs-4">
-        gmap
-      </div>
-    </div>
-  </div>
+<div class="panel-heading">
+<h3 class="panel-title"><%= run.displayDate() %></h3>
+</div>
+<div class="panel-body">
+<div class="row container">
+<div class="col-xs-1">
+<div class="row"><img class="avatar js-avatar" data-user="5546294" height="48" src="https://avatars3.githubusercontent.com/u/5546294?s=460" width="48"></div>
+<div class="row"><%= justTime( run.escape( 'start_time' ) ) %></div>
+</div>
+<div class="col-xs-6">
+<div><a id="user-run-title" href="#runs/<%= run.escape( 'id' ) %>"><%= run.escape( 'title' ) %></a>
+</div>
+<div><%= run.escape( 'distance' ) + " mi"%></div>
+</div>
+<div class="col-xs-3">
+gmap
+</div>
+</div>
+</div>
 </div>
 <% } %>
 <%  }) %>
+
+<!-- end of right column div -->
+</div>
+
+<!-- end of div class row -->
+</div>
+
+
+
+
+
+
+
+
+
