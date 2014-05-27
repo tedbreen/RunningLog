@@ -1,6 +1,6 @@
 class Api::UsersController < ApplicationController
   # before_action :require_current_user!, :except => [:create]
-  before_action :forbid_current_user!, :only => [:new]
+  before_action :forbid_current_user!, :only => [:new, :create]
 
   def index
     @users = User.all

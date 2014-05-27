@@ -1,5 +1,5 @@
-window.Strava.Views.RunNew = Backbone.View.extend({
-  template: JST['runs/new'],
+window.Strava.Views.UserNew = Backbone.View.extend({
+  template: JST['users/new'],
 
   events: {
     "submit form" : "submit"
@@ -14,10 +14,10 @@ window.Strava.Views.RunNew = Backbone.View.extend({
   submit: function (event) {
     event.preventDefault();
     var params = $(event.currentTarget).serializeJSON();
-    var newRun = new Strava.Models.Run(params);
-    newRun.save({}, {
+    var newUser = new Strava.Models.User(params);
+    newUser.save( {}, {
       success: function () {
-        Strava.Collections.runs.add( newRun );
+        Strava.Collections.users.add( newUser );
         Backbone.history.navigate("", { trigger: true });
       }
     });

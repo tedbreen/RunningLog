@@ -1,5 +1,6 @@
 class Api::RunsController < ApplicationController
   before_action :require_current_user!
+
   def new
     @run = Run.new
     render :new

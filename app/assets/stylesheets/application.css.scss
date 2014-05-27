@@ -33,3 +33,21 @@ div.test {
   border-style: dotted;
   border-color: purple;
 }
+
+table#new-activity {
+  width: 600px;
+  height: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+td {
+  vertical-align: top;
+  padding: 5px;
+
+}
+
+td.left {
+  float: right;
+}
+
