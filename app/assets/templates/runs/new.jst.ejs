@@ -20,12 +20,12 @@
 
 <tr>
   <td class="left"><label for="run-title">Name<label></td>
-  <td><input type="text" name="run[title]" id="run-title"></td>
+  <td><input type="text" name="run[title]" id="run-title" size="30"></td>
 </tr>
 
 <tr>
   <td class="left"><label for="run-city">City</label></td>
-  <td><input type="text" name="run[city]" id="run-city"></td>
+  <td><input type="text" name="run[city]" id="run-city" size="30"></td>
 </tr>
 
 <tr>
@@ -88,58 +88,60 @@
 
 <tr>
 <td class="left"><label for="run-year">Date (YYYY)</label></td>
-<td><input type="text" name="run[year]" id="run-year"></td>
+<td><input type="text" name="run[year]" id="run-year" size="30"></td>
 </tr>
 
 <tr>
 <td class="left"><label for="run-month">Date (MM)</label></td>
-<td><input type="text" name="run[mon]" id="run-month"></td>
+<td><input type="text" name="run[mon]" id="run-month" size="30"></td>
 </tr>
 
 <tr>
 <td class="left"><label for="run-day">Date (DD)</label></td>
-<td><input type="text" name="run[day]" id="run-day"></td>
+<td><input type="text" name="run[day]" id="run-day" size="30"></td>
 </tr>
 
 <tr>
 <td class="left"><label for="run-hour">Start time (HH)</label></td>
-<td><input type="text" name="run[hr]" id="run-hour"></td>
+<td><input type="text" name="run[hr]" id="run-hour" size="30"></td>
 </tr>
 
 <tr>
 <td class="left"><label for="run-min">Start time (MM)</label></td>
-<td><input type="text" name="run[min]" id="run-min"></td>
+<td><input type="text" name="run[min]" id="run-min" size="30"></td>
 </tr>
 
 <tr>
 <td class="left"><label for="run-zone">Time Zone</label></td>
-<td><input type="text" name="run[offset]" value="-08:00" id="run-zone"></td>
+<td><input type="text" name="run[offset]" value="-08:00" id="run-zone" size="30"></td>
 </tr>
 
 <tr>
 <td class="left"><label for="run-distance">Distance</label></td>
-<td><input type="text" name="run[distance]" id="run-distance"></td>
+<td><input type="text" name="run[distance]" id="run-distance" size="30"></td>
 </tr>
 
 <tr>
 <td class="left"><label for="run-d-hr">Duration (HH)</label></td>
-<td><input type="text" name="run[d_hr]" id="run-d-hr"></td>
+<td><input type="text" name="run[d_hr]" id="run-d-hr" size="30"></td>
 </tr>
 
 <tr>
 <td class="left"><label for="run-d-min">Duration (MM)</label></td>
-<td><input type="text" name="run[d_min]" id="run-d-min"></td>
+<td><input type="text" name="run[d_min]" id="run-d-min" size="30"></td>
 </tr>
 
 <tr>
 <td class="left"><label for="run-d-sec">Duration (SS)</label></td>
-<td><input type="text" name="run[d_sec]" id="run-d-sec"></td>
+<td><input type="text" name="run[d_sec]" id="run-d-sec" size="30"></td>
 </tr>
 
 
 <tr>
 <td class="left"><label for="run-sneaker">Sneaker (optional)</label></td>
-<td><input type="text" name="run[sneaker_id]" id="run-sneaker"></td>
+<td><select name="run[sneaker_id]" id="run-sneaker">
+  <option value="" selected="selected">Select a sneaker</option>
+</select></td>
 </tr>
 
 <tr>
@@ -150,7 +152,7 @@
 <tr>
 <td class="left"></td>
 <td>
-<div><button type='submit'>Create</button> &nbsp; or &nbsp; <a href='#'>Cancel</a></div>
+<div><button type='submit' class="btn btn-default">Create</button> &nbsp; or &nbsp; <a href='#'>Cancel</a></div>
 </div>
 </td>
 </tr>
