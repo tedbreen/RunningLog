@@ -1,26 +1,43 @@
-<header>
-  <h2><%= user.escape('fname') + " " + user.escape('lname') %></h2>
-  <h4><%= user.escape('city') + ", " + user.escape('state') %></h4>
-</header>
-
-  <% user.runs().each( function(run) { %>
-    <div class="row container" id="user-run-feed">
-      <% if ( run.get('user_id') === user.get('id')) { %>
-      <div class="col-xs-2">
-        <div><%= run.escape( 'start_date' ) %></div>
-        <div><%= justTime( run.escape( 'start_time' ) ) %></div>
-      </div>
-
-      <div class="col-xs-7">
+<div class="panel panel-default">
+  <div class="panel-body">
+    <div class="row container">
+      <div class="col-xs-4"><img class="avatar js-avatar img-rounded" data-user="5546294" height="200" src="https://avatars3.githubusercontent.com/u/5546294?s=460" width="200"></div>
+      <div class="col-xs-8">
         <div>
-          <a href="#runs/<%= run.escape( 'id' ) %>">
-            <%= run.escape( 'title' ) %>
-          </a>
+          <h3><%= user.escape('fname') + " " + user.escape('lname') %></h3>
         </div>
+        <div>
+          <%= user.escape('city') + ", " + user.escape('state') %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 
+
+
+<% user.runs().each( function(run) { %>
+<% if ( run.get('user_id') === user.get('id')) { %>
+<div class="panel panel-default" id="user-show-run">
+  <div class="panel-heading">
+    <h3 class="panel-title"><%= run.displayDate() %></h3>
+  </div>
+  <div class="panel-body">
+    <div class="row container">
+      <div class="col-xs-1">
+        <div class="row"><img class="avatar js-avatar" data-user="5546294" height="48" src="https://avatars3.githubusercontent.com/u/5546294?s=460" width="48"></div>
+        <div class="row"><%= justTime( run.escape( 'start_time' ) ) %></div>
+      </div>
+      <div class="col-xs-7">
+        <div><a id="user-run-title" href="#runs/<%= run.escape( 'id' ) %>"><%= run.escape( 'title' ) %></a>
+        </div>
         <div><%= run.escape( 'distance' ) + " mi"%></div>
       </div>
-
-    <% } %>
+      <div class="col-xs-4">
+        gmap
+      </div>
     </div>
-  <%  }) %>
+  </div>
+</div>
+<% } %>
+<%  }) %>

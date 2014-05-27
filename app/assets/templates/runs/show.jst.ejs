@@ -14,7 +14,7 @@
   <div><%= run.escape( 'city' ) + ', ' + run.escape( 'state' ) %></div>
 
   <div>
-    <%= run.escape( 'start_date' ) %> at <%= justTime( run.escape( 'start_time' ) ) %>
+    <%= run.displayDate() %> at <%= justTime( run.escape( 'start_time' ) ) %>
   </div>
 
   <div>Distance: <%= run.escape( 'distance' ) + " mi"%></div>

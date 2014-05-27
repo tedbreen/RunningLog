@@ -6,8 +6,8 @@
 
   <div class="row container" id="index-run-feed">
 
-    <div class="col-xs-2">
-      <div><%= run.escape( 'start_date' ) %></div>
+    <div class="col-xs-4">
+      <div><%= run.displayDate() %></div>
       <div><%= justTime( run.escape('start_time') ) %></div>
     </div>
 
@@ -20,7 +20,7 @@
       </div>
     </div>
 
-    <div class="col-xs-7">
+    <div class="col-xs-5">
       <div>
         <a href="#/runs/<%= run.escape( 'id' ) %>">
           <%= run.escape( 'title' ) %>
@@ -32,3 +32,4 @@
   </div>
 
   <%  }) %>
+

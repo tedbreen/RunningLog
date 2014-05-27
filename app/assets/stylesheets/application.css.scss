@@ -51,3 +51,36 @@ td {
 td.left {
   float: right;
 }
+
+div.left {
+  border-style: dashed;
+  border-color: red;
+}
+
+div.right {
+  border-style: dashed;
+  border-color: blue;
+}
+
+// #users/:id
+div#user-show-run {
+  border-style: dashed;
+  border-color: blue;
+}
+
+a#user-run-title {
+  font-size: 1.25em;
+}
+
+div#show-full-name {
+  font-size: 1.5em;
+}
+
+div#show-city-state {
+  font-size: 1em;
+}
+
+
+img#ted {
+  width: 200px;
+}
