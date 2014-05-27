@@ -56,6 +56,6 @@ window.Strava.Routers.AppRouter = Backbone.Router.extend({
     }
     this._currentView = view;
     this._currentView.render();
-    $('#content').html( this._currentView.$el );
+    $('#content').html( this._currentView.$el ).hide().fadeIn();
   }
 });

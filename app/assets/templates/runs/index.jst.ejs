@@ -1,35 +1,42 @@
-<header>
-  <h1>Run Feed</h1>
+<header id="run-index-header">
+  <div>Activity Feed</div>
 </header>
 
-  <% runs.each( function(run) { %>
-
-  <div class="row container" id="index-run-feed">
-
-    <div class="col-xs-4">
-      <div><%= run.displayDate() %></div>
-      <div><%= justTime( run.escape('start_time') ) %></div>
+<% runs.each( function(run) { %>
+<div class="panel panel-default" id="index-run-panel">
+<div class="panel-heading">
+<h3 class="panel-title"><%= run.displayDate() %></h3>
+</div>
+<div class="panel-body">
+<div class="row" id="index-panel-body">
+  <div class="col-xs-2 container" id="x">
+    <div class="row">
+    <div class="col-xs-4 col-xs-offset-1"><img class="avatar js-avatar" data-user="5546294" height="48" src="https://avatars3.githubusercontent.com/u/5546294?s=460" width="48"></div>
     </div>
-
-    <div class="col-xs-3">
-      <div>
-        <a href="#/users/<%= run.escape( 'user_id' ) %>">
-    <%= runs.users().getOrFetch( run.getUserId() ).get('fname') + " " +
-        runs.users().getOrFetch( run.getUserId() ).get('lname') %>
-        </a>
-      </div>
+    <div class="row">
+    <div class="col-xs-4 col-xs-offset-1"><%= justTime( run.escape( 'start_time' ) ) %></div>
     </div>
-
-    <div class="col-xs-5">
-      <div>
-        <a href="#/runs/<%= run.escape( 'id' ) %>">
-          <%= run.escape( 'title' ) %>
-        </a>
-      </div>
-      <div><%= run.escape( 'distance' ) + " mi"%></div>
-    </div>
-
+  </div>
+  <div class="col-xs-7" id="x">
+  <div>
+  <a href="#/users/<%= run.escape( 'user_id' ) %>">
+  <%= runs.users().getOrFetch( run.getUserId() ).get('fname') + " " +
+  runs.users().getOrFetch( run.getUserId() ).get('lname') %>
+  </a>
+  </div>
+  <div id="index-run-title">
+  <a href="#/runs/<%= run.escape( 'id' ) %>">
+  <%= run.escape( 'title' ) %>
+  </a>
+  </div>
+  <div><%= run.escape( 'distance' ) + " mi"%></div>
   </div>
 
-  <%  }) %>
+  <div class="col-xs-3" id="x">
+  <div>gmap</div>
+  </div>
 
+</div>
+</div>
+</div>
+<%  }) %>
