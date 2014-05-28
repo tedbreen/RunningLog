@@ -26,10 +26,6 @@ div#content {
   background: white;
 }
 
-div.row#user-show {
-  padding-top: 30px;
-}
-
 .navbar {
   background: white;
 }
@@ -37,12 +33,40 @@ div.row#user-show {
   background: #f7f7f7;
 }
 
-div#feed-col {
-//  padding-right: 40px;
+a {
+  color: black;
 }
 
+//RUN SHOW PAGE
+div#run-show-header {
+  font-size: 2em;
+//  border-style: dashed;
+}
+
+div#run-panel {
+//  border-style: dashed;
+//  border-color: red;
+  background: white;
+  border: 0;
+//  #run-avatar {
+//    border-style: dashed;
+//    border-color: green;
+//  }
+}
+
+
+//USER SHOW PAGE
+table#user-show-table {
+//  width: 500;
+  border-style: dashed;
+  border-color: green;
+}
+
+
+//USER SHOW PAGE
 div#avatar-col {
   padding-left: 30px;
+  padding-top: 30px;
 //  border-style: dashed;
 //  border-color: red;
   #username {
@@ -55,8 +79,28 @@ div#avatar-col {
   }
 }
 
-div.panel#add-run {
+//USER SHOW PAGE
+div#feed-col {
+//  border-style: dashed;
+  padding-top: 30px;
+  padding-right: 30px;
+  #user-run-title-link {
+    font-size: 1.25em;
+  }
+  #user-run-distance {
+    font-size: 1.1em;
+  }
+  div#user-run-left {
+//    border-style: dashed;
+//    border-color: blue;
+  }
+  div#user-run-right {
+//    border-style: dashed;
+//    border-color: red;
+  }
+}
 
+div.panel#add-run {
   select {
     font-size: 2em;
   }
@@ -78,7 +122,6 @@ div#application {
 div#index-run-panel {
 //  border-style: dashed;
 //  border-color: blue;
-//  border-width: thick;
 //
 //  #index-panel-body {
 //    border-style: dashed;
@@ -128,34 +171,14 @@ div.right {
   border-color: blue;
 }
 
-// #users/:id
-div#user-show-run {
-  border-style: dashed;
-  border-color: blue;
-}
-
-a#user-run-title {
-  font-size: 1.25em;
-}
-
 div#show-full-name {
-  font-size: 1.5em;
+  font-size: 1.3em;
 }
 
 div#show-city-state {
   font-size: 1em;
 }
 
-//#show-run-avatar {
-//  border-style: dashed;
-//  border-color: green;
-//}
-//
-//#show-run-title {
-//  border-style: dashed;
-//  border-color: green;
-//}
-//
 #gmap-user {
   border-style: dashed;
   border-color: green;

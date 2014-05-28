@@ -9,12 +9,11 @@
 </div>
 <div class="panel-body">
 <div class="row" id="index-panel-body">
-  <div class="col-xs-2 container" id="x">
+  <div class="col-xs-2 container">
     <div class="row">
-    <div class="col-xs-4 col-xs-offset-1"><img src="<%= runs.users().getOrFetch( run.getUserId() ).get('avatar') %>" width="48" height="48"></div>
-    </div>
-    <div class="row">
-    <div class="col-xs-4 col-xs-offset-1"><%= justTime( run.escape( 'start_time' ) ) %></div>
+    <a href="#/users/<%= run.escape( 'user_id' ) %>">
+    <div class="col-xs-4 col-xs-offset-1"><img src="<%= runs.users().getOrFetch( run.getUserId() ).get('avatar') %>" width="80" height="80"></div>
+    </a>
     </div>
   </div>
   <div class="col-xs-7" id="x">
@@ -34,7 +33,9 @@
 
   <div class="col-xs-3" id="x">
   <div>
-  <img id="gmap-user" src="http://maps.googleapis.com/maps/api/staticmap?center=<%= run.loc() %>&zoom=14&size=140x100&maptype=terrain&zoom=1&sensor=false">
+  <a href="#/runs/<%= run.escape( 'id' ) %>">
+  <img id="gmap-user" src="http://maps.googleapis.com/maps/api/staticmap?center=<%= run.loc() %>&zoom=10&size=160x100&maptype=terrain&sensor=false" class="img-rounded">
+  </a>
   </div>
   </div>
 

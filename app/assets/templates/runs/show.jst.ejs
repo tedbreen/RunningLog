@@ -1,24 +1,47 @@
-<h2><%= run.escape( 'title' ) + " -- " + run.runType() %></h2>
-<h4>by
+<div class="row" id="run-show-header">
+<div class="col-xs-8">
+<a href="#users/<%= run.getUserId() %>">
+<%= run.users().getOrFetch( run.getUserId() ).get('fname') + " " +
+run.users().getOrFetch( run.getUserId() ).get('lname') %></a> &#8212 <%= run.runType()%>
+</div>
+
+
+<div class="col-xs-4 col-xs-offset-0">
+<%= run.escape( 'distance' ) + " mi"%>
+</div>
+</div>
+
+<hr>
+
+<div class="panel panel-default" id="run-panel">
+<div class="panel-body">
+
+<div class="row">
+  <div class="col-xs-2" id="run-avatar">
   <a href="#users/<%= run.getUserId() %>">
-    <%= run.users().getOrFetch( run.getUserId() ).get('fname') + " " +
-    run.users().getOrFetch( run.getUserId() ).get('lname') %>
+  <img src="<%= run.users().getOrFetch( run.getUserId() ).get('avatar') %>" class="img-responsive img-rounded">
   </a>
-</h4>
-
-
-
-<div class="row container" id="run-show">
-
-
-  <div><%= run.escape( 'city' ) + ', ' + run.escape( 'state' ) %></div>
-
-  <div>
-    <%= run.displayDate() %> at <%= justTime( run.escape( 'start_time' ) ) %>
   </div>
+  <div class="col-xs-5">
+  <div>
+  <h4>
+  <%= run.displayDate() %>
+  </h4>
+  </div>
+  <div>
+  <%= run.escape( 'title' ) %>
+  </div>
+  </div>
+</div>
+<hr>
 
-  <div>Distance: <%= run.escape( 'distance' ) + " mi"%></div>
-  <br>
-  <div><%='"' + run.escape( 'description' ) + '"'%></div>
+<p class="lead">
+<%= run.escape( 'description' )%>
+</p>
 
+<hr>
+
+Insert dynamic map here!
+
+</div>
 </div>

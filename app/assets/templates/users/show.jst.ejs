@@ -1,39 +1,41 @@
 <div class="row" id="user-show">
 
 <!-- left column -->
-<div id="avatar-col" class="col-md-3">
-<div><img height="200" src="<%= user.escape('avatar') %>" width="200"></div>
+
+<div id="avatar-col" class="col-md-4">
+<div><img src="<%= user.escape('avatar') %>" height="200" width="200" class="img-rounded"></div>
 <div id="username"><%= user.escape('fname') + " " + user.escape('lname') %></div>
 <div id="location"><%= user.escape('city') + ", " + user.escape('state') %></div>
+<div><h1>Insert some cool graph here</h1></div>
 <!-- end of left column div -->
 </div>
 
+<!-- blank middle column
+<div class="col-md-1"></div> -->
+
+
 <!-- right column -->
-<div class="col-md-9" id="feed-col">
+
+<div id="feed-col" class="col-md-8">
 
 <% user.runs().each( function(run) { %>
 <% if ( run.get('user_id') === user.get('id')) { %>
-<div class="panel panel-default" id="user-show-run">
+<div class="panel panel-default" id="user-run">
 <div class="panel-heading">
 <h3 class="panel-title"><%= run.displayDate() %></h3>
 </div>
 <div class="panel-body">
 <div class="row">
-<div class="col-xs-2 container" id="show-run-avatar">
-  <div class="row">
-  <div class="col-xs-4 col-xs-offset-1"><img class="avatar js-avatar" data-user="5546294" height="48" src="<%= user.escape('avatar') %>" width="48"></div>
-  </div>
-  <div class="row">
-  <div class="col-xs-4 col-xs-offset-1"><%= justTime( run.escape( 'start_time' ) ) %></div>
-  </div>
+<div class="col-xs-8" id="user-run-left">
+<div id="user-run-title-link">
+<a href="#runs/<%= run.escape( 'id' ) %>"><%= run.escape( 'title' ) %></a>
 </div>
-<div class="col-xs-7" id="show-run-title">
-<div><a id="user-run-title" href="#runs/<%= run.escape( 'id' ) %>"><%= run.escape( 'title' ) %></a>
+<div id="user-run-distance"><%= run.escape( 'distance' ) + " mi"%></div>
 </div>
-<div><%= run.escape( 'distance' ) + " mi"%></div>
-</div>
-<div class="col-xs-3">
-<img id="gmap-user" src="http://maps.googleapis.com/maps/api/staticmap?center=<%= run.loc() %>&zoom=14&size=140x100&&maptype=terrain&zoom=1&sensor=false">
+<div class="col-xs-4" id="user-run-right">
+<a href="#runs/<%= run.escape( 'id' ) %>">
+<img id="gmap-user" src="http://maps.googleapis.com/maps/api/staticmap?center=<%= run.loc() %>&zoom=10&size=160x100&maptype=terrain&sensor=false" class="img-rounded">
+</a>
 </div>
 </div>
 </div>
@@ -44,14 +46,7 @@
 <!-- end of right column div -->
 </div>
 
+
+
 <!-- end of div class row -->
 </div>
-
-
-
-
-
-
-
-
-

@@ -6,6 +6,7 @@ window.Strava.Models.Run = Backbone.Model.extend({
     return this.get('user_id');
   },
 
+
   runType: function () {
     var type = this.get('run_type');
     switch (type) {
