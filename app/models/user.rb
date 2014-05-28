@@ -8,12 +8,12 @@
 #  created_at      :datetime
 #  updated_at      :datetime
 #  session_token   :string(255)      not null
-#  gender          :integer
-#  city            :string(255)
-#  state           :string(255)
-#  fname           :string(255)
-#  lname           :string(255)
-#  avatar          :string(255)
+#  fname           :string(255)      not null
+#  lname           :string(255)      not null
+#  state           :string(255)      not null
+#  city            :string(255)      not null
+#  gender          :integer          not null
+#  avatar          :string(255)      not null
 #
 
 class User < ActiveRecord::Base

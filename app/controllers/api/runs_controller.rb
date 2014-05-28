@@ -8,28 +8,17 @@ class Api::RunsController < ApplicationController
 
   def create
     @p = params[:run]
-    @run = Run.new
+
+    @run = Run.new( params[:run].permit(:run_type, :title, :city, :state,
+                                        :distance, :description)
+    )
     @run.user_id = current_user.id
-
-    @run.run_type = @p[:run_type]
-
-    @run.title = @p[:title]
-
-    @run.city = @p[:city]
-    @run.state = @p[:state]
-
     @run.start_date = set_date( @p[:year].to_i, @p[:mon].to_i, @p[:day].to_i )
-
     @run.start_time = set_time( @p[:hr].to_i, @p[:min].to_i, @p[:offset] )
-
     @run.duration = set_duration( @p[:d_hr].to_i,
                                   @p[:d_min].to_i,
                                   @p[:d_sec].to_i
     )
-
-    @run.distance = @p[:distance]
-
-    @run.description = @p[:description]
 
     if @run.save
       render :json => @run

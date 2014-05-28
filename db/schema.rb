@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140528011614) do
+ActiveRecord::Schema.define(version: 20140528051945) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -27,8 +27,8 @@ ActiveRecord::Schema.define(version: 20140528011614) do
     t.float    "duration"
     t.date     "start_date",  null: false
     t.string   "title",       null: false
-    t.text     "description"
     t.float    "distance",    null: false
+    t.text     "description", null: false
   end
 
   add_index "runs", ["city"], name: "index_runs_on_city", using: :btree
@@ -45,20 +45,15 @@ ActiveRecord::Schema.define(version: 20140528011614) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "session_token",   null: false
-    t.integer  "gender"
-    t.string   "city"
-    t.string   "state"
-    t.string   "fname"
-    t.string   "lname"
-    t.string   "avatar"
+    t.string   "fname",           null: false
+    t.string   "lname",           null: false
+    t.string   "state",           null: false
+    t.string   "city",            null: false
+    t.integer  "gender",          null: false
+    t.string   "avatar",          null: false
   end
 
-  add_index "users", ["city"], name: "index_users_on_city", using: :btree
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
-  add_index "users", ["fname"], name: "index_users_on_fname", using: :btree
-  add_index "users", ["gender"], name: "index_users_on_gender", using: :btree
-  add_index "users", ["lname"], name: "index_users_on_lname", using: :btree
   add_index "users", ["session_token"], name: "index_users_on_session_token", unique: true, using: :btree
-  add_index "users", ["state"], name: "index_users_on_state", using: :btree
 
 end

@@ -130,8 +130,8 @@ div.right {
 
 // #users/:id
 div#user-show-run {
-//  border-style: dashed;
-//  border-color: blue;
+  border-style: dashed;
+  border-color: blue;
 }
 
 a#user-run-title {
@@ -156,10 +156,10 @@ div#show-city-state {
 //  border-color: green;
 //}
 //
-//#show-gmap {
-//  border-style: dashed;
-//  border-color: green;
-//}
+#gmap-user {
+  border-style: dashed;
+  border-color: green;
+}
 
 img#ted {
   width: 200px;

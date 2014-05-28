@@ -13,8 +13,8 @@
 #  duration    :float
 #  start_date  :date             not null
 #  title       :string(255)      not null
-#  description :text
 #  distance    :float            not null
+#  description :text             not null
 #
 
 class Run < ActiveRecord::Base
@@ -25,6 +25,7 @@ class Run < ActiveRecord::Base
   validates :distance, :presence => true
   validates :city, :presence => true
   validates :state, :presence => true
+  validates :description, :presence => true
 
   belongs_to(
     :user,

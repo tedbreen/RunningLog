@@ -44,6 +44,28 @@ window.Strava.Models.Run = Backbone.Model.extend({
             months[javaDate.getMonth()] + " " +
             javaDate.getDate() + ", " +
             javaDate.getFullYear() );
+  },
+
+  loc: function () {
+    var city = this.get('city');
+    var state = this.get('state');
+    var newCity = "";
+    var newState = "";
+    for (var i = 0; i < city.length; i++) {
+      if (city[i] === " ") {
+        newCity += '+';
+      } else {
+        newCity += city[i];
+      }
+    }
+    for (var j = 0; i < state.length; i++) {
+      if (state[i] === " ") {
+        newState += '+';
+      } else {
+        newState += state[i];
+      }
+    }
+    return newCity + "," + newState;
   }
 
 });

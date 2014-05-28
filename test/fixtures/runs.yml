@@ -13,8 +13,8 @@
 #  duration    :float
 #  start_date  :date             not null
 #  title       :string(255)      not null
-#  description :text
 #  distance    :float            not null
+#  description :text             not null
 #
 
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html

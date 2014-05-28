@@ -32,8 +32,8 @@
 </div>
 <div><%= run.escape( 'distance' ) + " mi"%></div>
 </div>
-<div class="col-xs-3" id="show-gmap">
-<img src="https://maps.googleapis.com/maps/api/staticmap?center=0,0&zoom=1&size=100x100&sensor=false">
+<div class="col-xs-3">
+<img id="gmap-user" src="http://maps.googleapis.com/maps/api/staticmap?center=<%= run.loc() %>&zoom=14&size=140x100&&maptype=terrain&zoom=1&sensor=false">
 </div>
 </div>
 </div>
