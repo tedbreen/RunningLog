@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140523182059) do
+ActiveRecord::Schema.define(version: 20140528011614) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -22,7 +22,6 @@ ActiveRecord::Schema.define(version: 20140523182059) do
     t.integer  "run_type",    null: false
     t.string   "city",        null: false
     t.string   "state",       null: false
-    t.integer  "sneaker_id"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.float    "duration"
@@ -36,7 +35,6 @@ ActiveRecord::Schema.define(version: 20140523182059) do
   add_index "runs", ["distance"], name: "index_runs_on_distance", using: :btree
   add_index "runs", ["duration"], name: "index_runs_on_duration", using: :btree
   add_index "runs", ["run_type"], name: "index_runs_on_run_type", using: :btree
-  add_index "runs", ["sneaker_id"], name: "index_runs_on_sneaker_id", using: :btree
   add_index "runs", ["start_time"], name: "index_runs_on_start_time", using: :btree
   add_index "runs", ["state"], name: "index_runs_on_state", using: :btree
   add_index "runs", ["user_id"], name: "index_runs_on_user_id", using: :btree
@@ -52,6 +50,7 @@ ActiveRecord::Schema.define(version: 20140523182059) do
     t.string   "state"
     t.string   "fname"
     t.string   "lname"
+    t.string   "avatar"
   end
 
   add_index "users", ["city"], name: "index_users_on_city", using: :btree

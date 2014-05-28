@@ -29,8 +29,6 @@ class Api::RunsController < ApplicationController
 
     @run.distance = @p[:distance]
 
-    @run.sneaker_id = @p[:sneaker_id] unless @p[:sneaker_id].empty?
-
     @run.description = @p[:description]
 
     if @run.save

@@ -2,7 +2,7 @@
 
 <!-- left column -->
 <div id="avatar-col" class="col-md-3">
-<div><img class="avatar js-avatar img-rounded" data-user="5546294" height="200" src="https://avatars3.githubusercontent.com/u/5546294?s=460" width="200"></div>
+<div><img height="200" src="<%= user.escape('avatar') %>" width="200"></div>
 <div id="username"><%= user.escape('fname') + " " + user.escape('lname') %></div>
 <div id="location"><%= user.escape('city') + ", " + user.escape('state') %></div>
 <!-- end of left column div -->
@@ -21,7 +21,7 @@
 <div class="row">
 <div class="col-xs-2 container" id="show-run-avatar">
   <div class="row">
-  <div class="col-xs-4 col-xs-offset-1"><img class="avatar js-avatar" data-user="5546294" height="48" src="https://avatars3.githubusercontent.com/u/5546294?s=460" width="48"></div>
+  <div class="col-xs-4 col-xs-offset-1"><img class="avatar js-avatar" data-user="5546294" height="48" src="<%= user.escape('avatar') %>" width="48"></div>
   </div>
   <div class="row">
   <div class="col-xs-4 col-xs-offset-1"><%= justTime( run.escape( 'start_time' ) ) %></div>
@@ -33,7 +33,7 @@
 <div><%= run.escape( 'distance' ) + " mi"%></div>
 </div>
 <div class="col-xs-3" id="show-gmap">
-gmap
+<img src="https://maps.googleapis.com/maps/api/staticmap?center=0,0&zoom=1&size=100x100&sensor=false">
 </div>
 </div>
 </div>

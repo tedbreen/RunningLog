@@ -8,7 +8,6 @@
 #  run_type    :integer          not null
 #  city        :string(255)      not null
 #  state       :string(255)      not null
-#  sneaker_id  :integer
 #  created_at  :datetime
 #  updated_at  :datetime
 #  duration    :float

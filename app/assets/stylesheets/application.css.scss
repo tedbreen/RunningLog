@@ -21,8 +21,8 @@ body {
 
 // main container for everything
 div#content {
-  border-style: dashed;
-  border-color: red;
+//  border-style: dashed;
+//  border-color: red;
   background: white;
 }
 
@@ -75,7 +75,7 @@ div#application {
   line-height: 2em;
 }
 
-//div#index-run-panel {
+div#index-run-panel {
 //  border-style: dashed;
 //  border-color: blue;
 //  border-width: thick;
@@ -89,11 +89,11 @@ div#application {
 //    border-style: dashed;
 //    border-color: green;
 //  }
-//
-//  #index-run-title {
-//    font-size: 1.25em;
-//  }
-//}
+
+  #index-run-title {
+    font-size: 1.25em;
+  }
+}
 
 div.test {
   border-style: dotted;

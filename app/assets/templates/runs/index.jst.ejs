@@ -11,7 +11,7 @@
 <div class="row" id="index-panel-body">
   <div class="col-xs-2 container" id="x">
     <div class="row">
-    <div class="col-xs-4 col-xs-offset-1"><img class="avatar js-avatar" data-user="5546294" height="48" src="https://avatars3.githubusercontent.com/u/5546294?s=460" width="48"></div>
+    <div class="col-xs-4 col-xs-offset-1"><img src="<%= runs.users().getOrFetch( run.getUserId() ).get('avatar') %>" width="48" height="48"></div>
     </div>
     <div class="row">
     <div class="col-xs-4 col-xs-offset-1"><%= justTime( run.escape( 'start_time' ) ) %></div>
@@ -33,7 +33,9 @@
   </div>
 
   <div class="col-xs-3" id="x">
-  <div>gmap</div>
+  <div>
+    <img src="https://maps.googleapis.com/maps/api/staticmap?center=0,0&zoom=1&size=100x100&sensor=false">
+  </div>
   </div>
 
 </div>

@@ -13,6 +13,7 @@
 #  state           :string(255)
 #  fname           :string(255)
 #  lname           :string(255)
+#  avatar          :string(255)
 #
 
 class User < ActiveRecord::Base
@@ -25,6 +26,7 @@ class User < ActiveRecord::Base
   validates :password, :length => { :minimum => 1, :allow_nil => true }
   validates :session_token, :presence => true
   validates :gender, :presence => true
+  validates :avatar, :presence => true
 
   has_many(
     :runs,

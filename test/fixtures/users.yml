@@ -13,6 +13,7 @@
 #  state           :string(255)
 #  fname           :string(255)
 #  lname           :string(255)
+#  avatar          :string(255)
 #
 
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
