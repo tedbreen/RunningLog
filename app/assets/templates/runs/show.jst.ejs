@@ -1,14 +1,7 @@
-<div class="row" id="run-show-header">
-<div class="col-xs-8">
+<div class="row container" id="run-show-header">
 <a href="#users/<%= run.getUserId() %>">
 <%= run.users().getOrFetch( run.getUserId() ).get('fname') + " " +
 run.users().getOrFetch( run.getUserId() ).get('lname') %></a> &#8212 <%= run.runType()%>
-</div>
-
-
-<div class="col-xs-4 col-xs-offset-0">
-<%= run.escape( 'distance' ) + " mi" %>
-</div>
 </div>
 
 <hr>
@@ -30,6 +23,9 @@ run.users().getOrFetch( run.getUserId() ).get('lname') %></a> &#8212 <%= run.run
   </div>
   <div>
   <%= run.escape( 'title' ) %>
+  </div>
+  <div id="run-show-distance">
+  <%= run.escape( 'distance' ) + " mi" %>
   </div>
   </div>
 </div>

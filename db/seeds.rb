@@ -80,7 +80,7 @@ Run.create(user_id: 2,
            start_date: date4,
            title: "2 x 1mi",
            description: "Tualatin HS outdoor track, 2 x mile with full recovery. Splits:  4:59 (5:42), 4:56.  Didn't feel great, but no problem hitting the 5k pace.  It felt extra cold on the track.",
-           distance: 22.5
+           distance: 5
 )
 
 # Katie runs

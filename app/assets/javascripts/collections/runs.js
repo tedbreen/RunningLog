@@ -5,8 +5,14 @@ window.Strava.Collections.Runs = Backbone.Collection.extend({
 
   model: Strava.Models.Run,
 
-  comparator: function(model) {
-    return model.get("start_date");
+  comparator: function(a, b) {
+    var aModel = a.get('start_date');
+    var bModel = b.get('start_date');
+    if (aModel < bModel) {
+      return 1;
+    } else {
+      return -1;
+    }
   },
 
   getOrFetch: function(id){

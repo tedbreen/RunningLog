@@ -15,7 +15,7 @@
 
 <tr>
   <td class="left"><label for="run-type">Type</label></td>
-  <td><select name="run[run_type]" id="run-type">
+  <td><select name="run[run_type]" id="run-type" required>
     <option value="" selected="selected">Select a run type</option>
     <option value="0">Run</option>
     <option value="1">Long run</option>
@@ -27,12 +27,12 @@
 
 <tr>
   <td class="left"><label for="run-title">Name<label></td>
-  <td><input type="text" name="run[title]" id="run-title" size="30"></td>
+  <td><input type="text" name="run[title]" id="run-title" size="30" required placeholder="Enter a title"></td>
 </tr>
 
 <tr>
   <td class="left"><label for="run-city">City</label></td>
-  <td><input type="text" name="run[city]" id="run-city" size="30"></td>
+  <td><input type="text" name="run[city]" id="run-city" size="30" required placeholder="Enter a city or town"></td>
 </tr>
 
 <tr>
@@ -95,22 +95,22 @@
 
 <tr>
 <td class="left"><label for="run-year">Date (YYYY)</label></td>
-<td><input type="text" name="run[year]" id="run-year" size="30"></td>
+<td><input type="number" name="run[year]" id="run-year" size="30" required placeholder="Enter a year"></td>
 </tr>
 
 <tr>
 <td class="left"><label for="run-month">Date (MM)</label></td>
-<td><input type="text" name="run[mon]" id="run-month" size="30"></td>
+<td><input type="number" name="run[mon]" id="run-month" size="30" required placeholder="Enter a month (1-12)"></td>
 </tr>
 
 <tr>
 <td class="left"><label for="run-day">Date (DD)</label></td>
-<td><input type="text" name="run[day]" id="run-day" size="30"></td>
+<td><input type="number" name="run[day]" id="run-day" size="30" required placeholder="Enter a day"></td>
 </tr>
 
 <tr>
 <td class="left"><label for="run-distance">Distance</label></td>
-<td><input type="text" name="run[distance]" id="run-distance" size="30"></td>
+<td><input type="text" name="run[distance]" id="run-distance" size="30" required placeholder="Enter number of miles"></td>
 </tr>
 
 <tr>
@@ -130,7 +130,7 @@
 
 <tr>
 <td class="left"><label for="run-desc">Description</label></td>
-<td><textarea name="run[description]" id="run-desc"></textarea></td>
+<td><textarea name="run[description]" id="run-desc" required placeholder="Enter a description"></textarea></td>
 </tr>
 
 <tr>
