@@ -106,6 +106,12 @@ div.panel#add-run {
   }
 }
 
+div.panel#add-user {
+  select {
+    font-size: 2em;
+  }
+}
+
 div.panel-title {
   font-size: 2.2em;
 }
@@ -148,13 +154,33 @@ table#new-activity {
   height: 600px;
   margin-left: auto;
   margin-right: auto;
+  tr {
+//    border-style: dashed;
+//    border-color: red;
+  }
+
+//  border-style: dotted;
+}
+
+table#new-user {
+  width: 600px;
+  height: 600px;
+  margin-left: auto;
+  margin-right: auto;
+  tr {
+//    border-style: dashed;
+//    border-color: red;
+  }
+  td.left {
+//    border-style: dashed;
+//    border-color: green;
+  }
 //  border-style: dotted;
 }
 
 td {
   vertical-align: top;
   padding: 5px;
-
 }
 
 td.left {
