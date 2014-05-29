@@ -1,6 +1,31 @@
 <div class="container">
-  <div class="jumbotron">
-    <h1 id="sign-up-btn">Welcome!</h1><br>
-    <a href="/api/users/new" id="log-in-btn" class="btn btn-lg btn-success">Sign Up &raquo;</a>
-  </div>
+<div class="jumbotron">
+<h1 id="sign-up-btn">Welcome!</h1><br>
+<a href="/api/users/new" id="log-in-btn" class="btn btn-lg btn-success">Sign Up &raquo;</a>
+
+<form action="<%= session_url %>" method="post" role="form">
+<input type="hidden"
+name="authenticity_token"
+value="<%= form_authenticity_token %>">
+
+<div class="form-group">
+<input type="hidden"
+name="user[email]"
+id="session-email"
+class="form-control"
+value="guest@email.com">
+</div>
+
+<div class="form-group">
+<input type="hidden"
+name="user[password]"
+id="session-password"
+class="form-control"
+value="guest">
+</div>
+
+<button type="submit" class="btn btn-lg btn-primary">Guest &raquo;</button>
+</form>
+
+</div>
 </div>

@@ -16,3 +16,16 @@ $(function() {
     Strava.initialize();
   }
 });
+
+var weekMaker = function (date) {
+  var week = [];
+
+  var year = date.getFullYear(); var month = date.getMonth();
+  var day = date.getDate(); var wday = date.getDay();
+
+  var start = day - wday;
+  for (var i = 0; i < 7; i++) {
+    week.push( new Date(year, month, start + i) );
+  }
+  return week;
+}

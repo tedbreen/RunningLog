@@ -1,0 +1,37 @@
+<h1>Calendar view</h1>
+
+<table class="table">
+<tr>
+
+<th class="weekSum">Total</td>
+<th class="sun">Sun</td>
+<th class="mon">Mon</td>
+<th class="tue">Tue</td>
+<th class="wed">Wed</td>
+<th class="thu">Thu</td>
+<th class="fri">Fri</td>
+<th class="sat">Sat</td>
+
+
+</tr>
+
+<tr>
+
+<td class="weekSum">
+  <div class="weekTitle">
+    <%= (weekMaker(today())[0].getMonth() + 1)+"/"+(weekMaker(today())[0].getDate())+" - "+
+        (weekMaker(today())[6].getMonth() + 1)+"/"+(weekMaker(today())[6].getDate())%>
+  </div>
+  <div class="weekSum">0</div>
+</td>
+<td class="sun">0</td>
+<td class="mon">0</td>
+<td class="tue">0</td>
+<td class="wed">0</td>
+<td class="thu">0</td>
+<td class="fri">0</td>
+<td class="sat">0</td>
+
+
+</tr>
+</table>
