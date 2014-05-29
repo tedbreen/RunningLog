@@ -14,7 +14,6 @@ window.Strava.Views.RunNew = Backbone.View.extend({
   submit: function (event) {
     event.preventDefault();
     var params = $(event.currentTarget).serializeJSON();
-    debugger
     var newRun = new Strava.Models.Run(params);
     newRun.save({}, {
       success: function () {

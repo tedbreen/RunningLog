@@ -33,7 +33,6 @@ window.Strava.Models.Run = Backbone.Model.extend({
   displayDate: function () {
     var date = this.get( 'start_date' );
     var javaDate = new Date(date);
-
     var months = ["January", "February", "March", "April",
                   "May", "June", "July", "August",
                   "September", "October", "November", "December"];
@@ -48,25 +47,21 @@ window.Strava.Models.Run = Backbone.Model.extend({
   },
 
   loc: function () {
-    var city = this.get('city');
-    var state = this.get('state');
-    var newCity = "";
-    var newState = "";
-    for (var i = 0; i < city.length; i++) {
-      if (city[i] === " ") {
-        newCity += '+';
-      } else {
-        newCity += city[i];
+    var city = this.get( 'city' );
+    if (city === undefined) {
+      return "";
+    } else {
+      var state = this.get( 'state' );
+      var newCity = "";
+      for (var i = 0; i < city.length; i++) {
+        if (city[i] === " ") {
+          newCity += '+';
+        } else {
+          newCity += city[i];
+        }
       }
+      return newCity + "," + state;
     }
-    for (var j = 0; i < state.length; i++) {
-      if (state[i] === " ") {
-        newState += '+';
-      } else {
-        newState += state[i];
-      }
-    }
-    return newCity + "," + newState;
   }
 
 });

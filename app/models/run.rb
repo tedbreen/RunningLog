@@ -4,17 +4,16 @@
 #
 #  id          :integer          not null, primary key
 #  user_id     :integer          not null
-#  start_time  :time             not null
 #  run_type    :integer          not null
 #  city        :string(255)      not null
 #  state       :string(255)      not null
 #  created_at  :datetime
 #  updated_at  :datetime
 #  duration    :float
-#  start_date  :date             not null
 #  title       :string(255)      not null
 #  distance    :float            not null
 #  description :text             not null
+#  start_date  :datetime         not null
 #
 
 class Run < ActiveRecord::Base

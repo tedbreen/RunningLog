@@ -7,7 +7,7 @@ run.users().getOrFetch( run.getUserId() ).get('lname') %></a> &#8212 <%= run.run
 
 
 <div class="col-xs-4 col-xs-offset-0">
-<%= run.escape( 'distance' ) + " mi"%>
+<%= run.escape( 'distance' ) + " mi" %>
 </div>
 </div>
 
@@ -36,12 +36,19 @@ run.users().getOrFetch( run.getUserId() ).get('lname') %></a> &#8212 <%= run.run
 <hr>
 
 <p class="lead">
-<%= run.escape( 'description' )%>
+<%= run.escape( 'description' ) %>
 </p>
 
 <hr>
 
-Insert dynamic map here!
+<iframe
+width="600"
+height="450"
+frameborder="0"
+style="border:0"
+src="https://www.google.com/maps/embed/v1/place?key=<%= G_KEY %>&q=<%= run.loc() %>
+  &zoom=11">
+</iframe>
 
 </div>
 </div>

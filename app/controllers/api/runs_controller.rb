@@ -41,7 +41,7 @@ class Api::RunsController < ApplicationController
   private
 
   def set_date(yr,mo,da)
-    Date.new(yr,mo,da)
+    DateTime.new(yr,mo,da,12,0,0)
   end
 
   def set_duration(hr, min, sec)
