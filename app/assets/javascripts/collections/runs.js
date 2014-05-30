@@ -10,7 +10,6 @@ window.Strava.Collections.Runs = Backbone.Collection.extend({
 
   parse: function(response) {
     // debugger;
-    // this.page = response.page;
     this.total_pages = response.total_pages;
     return response.models;
   },
@@ -36,6 +35,7 @@ window.Strava.Collections.Runs = Backbone.Collection.extend({
     this.fetch();
   },
 
+  // SERVER IS RETURNING RESULTS IN ORDER, SO COMPARATOR NOT NEEDED
   // comparator: function(a, b) {
   //   var aModel = a.get('start_date');
   //   var bModel = b.get('start_date');
