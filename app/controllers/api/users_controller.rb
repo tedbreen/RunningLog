@@ -4,7 +4,6 @@ class Api::UsersController < ApplicationController
 
   def index
     @users = User.all
-    # render :json => @users
     render :json => @users
   end
 
@@ -22,7 +21,7 @@ class Api::UsersController < ApplicationController
 
   def new
     @user = User.new
-    render :new
+    # render :new
   end
 
   def show

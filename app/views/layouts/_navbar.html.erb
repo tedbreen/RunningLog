@@ -8,7 +8,7 @@
   <span class="icon-bar"></span>
   <span class="icon-bar"></span>
   </button>
-  <a class="navbar-brand" href="/#">Straava</a>
+  <a class="navbar-brand" id="navbar-logo" href="/#">Straava</a>
 </div>
 
 <div class="navbar-collapse collapse">
@@ -30,7 +30,7 @@
   <li><%= link_to "Sign Out", session_url, method: :delete %></li>
   </ul>
   </li>
-  <li><a href="#runs/new">Upload</a></li>
+  <li id="button-li"><a id="upload-link" class="btn btn-primary" href="#runs/new">Upload</a></li>
   </ul>
 <% else %>
   <ul class="nav navbar-nav navbar-right">

@@ -5,8 +5,10 @@ window.Strava = {
   Routers: {},
 
   initialize: function () {
-    var $rootEl = $('#content');
-    new Strava.Routers.AppRouter();
+    // var $rootEl = $('#content');
+    new Strava.Routers.AppRouter({
+      $rootEl: $('#content')
+    });
     Backbone.history.start();
   }
 };

@@ -105,16 +105,41 @@ div#feed-col {
   }
 }
 
+//NEW RUN UPLOAD PAGE
 div.panel#add-run {
   select {
     font-size: 2em;
   }
 }
 
+//NEW USER SIGN UP PAGE
 div.panel#add-user {
   select {
     font-size: 2em;
   }
+}
+
+//SESSION SIGN IN PAGE
+div.panel#add-session {
+  select {
+    font-size: 2em;
+  }
+}
+
+table#new-session {
+  width: 600px;
+  height: 120px;
+  margin-left: auto;
+  margin-right: auto;
+  tr {
+//    border-style: dashed;
+//    border-color: red;
+  }
+  td.left {
+//    border-style: dashed;
+//    border-color: green;
+  }
+//  border-style: dotted;
 }
 
 div.panel-title {
@@ -169,7 +194,7 @@ table#new-activity {
 
 table#new-user {
   width: 600px;
-  height: 600px;
+  height: 400px;
   margin-left: auto;
   margin-right: auto;
   tr {
@@ -181,6 +206,43 @@ table#new-user {
 //    border-color: green;
   }
 //  border-style: dotted;
+}
+
+a#log-in-btn {
+  background-color: #fc4c02;
+  border-color: #fc4c02;
+  color: white;
+}
+
+a#guest-btn {
+  background-color: #428bca;
+  border-color: #428bca;
+  color: white;
+}
+
+.navbar-default .navbar-brand {
+  color: #fc4c02;
+}
+//#428bca
+
+a#upload-link {
+  background-color: #fc4c02;
+  color: white;
+  border-width: 0px;
+  border-color: #fc4c02;
+  width: 70px;
+  height: 30px;
+//  text-align: center;
+  line-height: 20%;
+  padding-right: 60px;
+
+}
+
+li#button-li {
+  padding-top: 10px;
+  padding-bottom: 10px;
+  text-align: center;
+//  border-style: solid;
 }
 
 td {

@@ -18,7 +18,9 @@ window.Strava.Views.RunNew = Backbone.View.extend({
     newRun.save({}, {
       success: function () {
         Strava.Collections.runs.add( newRun );
-        Backbone.history.navigate("", { trigger: true });
+        Backbone.history.navigate("runs/" + newRun.get('id'), {
+          trigger: true
+        });
       },
 
       error: function() {

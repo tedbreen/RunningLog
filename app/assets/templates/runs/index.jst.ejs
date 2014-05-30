@@ -44,12 +44,20 @@
 </div>
 <%  }) %>
 
-<% for(var i = 1; i < runs.total_pages + 1; i++) { %>
+<!-- <% for(var i = 1; i < runs.total_pages + 1; i++) { %>
   <ul>
     <li><a href="#/runs/page/<%= i %>"><%= i %></a></li>
   </ul>
+<% } %> -->
+<div class="btn-group">
+<button type="button" class="btn btn-default home-page-button">Home</button>
+<% if (runs.page == 1) { %>
+<button type="button" class="btn btn-default next-page-button">Next</button>
+<% } else if (runs.page == runs.total_pages) { %>
+<button type="button" class="btn btn-default prev-page-button">Prev</button>
+<% } else { %>
+<button type="button" class="btn btn-default prev-page-button">Prev</button>
+<button type="button" class="btn btn-default next-page-button">Next</button>
 <% } %>
-<!-- <button class="prev-page-button btn btn-lg btn-danger">Prev Page</button>
-<button class="next-page-button btn btn-lg btn-primary">Next Page</button> -->
-
-
+</div>
+<h4>Page <%= runs.page %> of <%= runs.total_pages %></h4>

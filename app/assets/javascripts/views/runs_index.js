@@ -1,10 +1,11 @@
 window.Strava.Views.RunsIndex = Backbone.View.extend({
   template: JST['runs/index'],
 
-  // events: {
-  //   "click .next-page-button" : "nextPage",
-  //   "click .prev-page-button" : "prevPage"
-  // },
+  events: {
+    "click .next-page-button" : "nextPage",
+    "click .prev-page-button" : "prevPage",
+    "click .home-page-button" : "homePage"
+  },
 
   initialize: function(options) {
     this.listenTo( this.collection, "sync add", this.render );
@@ -25,13 +26,20 @@ window.Strava.Views.RunsIndex = Backbone.View.extend({
     });
     this.$el.html( renderedContent );
     return this;
-  }
+  },
 
-  // nextPage: function(event) {
-//     this.collection.getNextPage();
-//   },
-//
-//   prevPage: function(event) {
-//     this.collection.getPrevPage();
-//   }
+  nextPage: function(event) {
+    $('body').scrollTop(0);
+    this.collection.getNextPage();
+  },
+
+  prevPage: function(event) {
+    $('body').scrollTop(0);
+    this.collection.getPrevPage();
+  },
+
+  homePage: function(event) {
+    $('body').scrollTop(0);
+    this.collection.getHomePage();
+  }
 })

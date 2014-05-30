@@ -19,7 +19,8 @@
 <div id="feed-col" class="col-md-8">
 
 <% user.runs().each( function(run) { %>
-<% if ( run.get('user_id') === user.get('id')) { %>
+<% if ( run.get(
+'user_id') === user.get('id')) { %>
 <div class="panel panel-default" id="user-run">
 <div class="panel-heading">
 <h3 class="panel-title"><%= run.displayDate() %></h3>

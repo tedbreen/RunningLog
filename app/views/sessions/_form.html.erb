@@ -1,29 +1,46 @@
-<div class="container">
+<div>
+<br>
+<div class="row">
+<div class="col-md-2"></div>
 
-    <h2>Sign in</h2>
-    <form action="<%= session_url %>" method="post" role="form">
-      <input type="hidden"
-               name="authenticity_token"
-               value="<%= form_authenticity_token %>">
+<div class="col-md-8" id="what">
+<div id="add-session" class="panel panel-default">
+<div class="panel-heading">
+<div class="panel-title">Sign in</div>
+</div>
+<div class="panel-body">
 
-      <div class="form-group">
-        <label for="session-email">Email</label>
-        <input type="text"
-               name="user[email]"
-               id="session-email"
-               class="form-control">
-      </div>
+<form action="<%= session_url %>" method="post" role="form">
+<input type="hidden"
+name="authenticity_token"
+value="<%= form_authenticity_token %>">
 
-      <div class="form-group">
-        <label for="session-password">Password</label>
-        <input type="password"
-               name="user[password]"
-               id="session-password"
-               class="form-control">
-      </div>
+<table id='new-session'>
 
-      <button type="submit" class="btn btn-default">Sign In</button>
+<tr>
+  <td class="left"><label for="session-email">Email</label></td>
+  <td><input type="email" name="user[email]" id="session-email" size="30" required></td>
+</tr>
 
-    </form>
+<tr>
+  <td class="left"><label for="session-password">Password</label></td>
+  <td><input type="password" name="user[password]" id="session-password" size="30" required></td>
+</tr>
 
+<tr>
+<td class="left"></td>
+<td>
+<div><button type='submit' class="btn btn-default" id="btn-guest">Sign In</button> &nbsp; or &nbsp; <a href='/#'>Cancel</a></div>
+</td>
+</tr>
+
+</table>
+
+
+
+</form>
+</div>
+</div>
+</div>
+</div>
 </div>

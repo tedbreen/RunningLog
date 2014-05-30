@@ -17,6 +17,25 @@ window.Strava.Collections.Runs = Backbone.Collection.extend({
 
   model: Strava.Models.Run,
 
+  getNextPage: function () {
+    // debugger;
+    this.page += 1;
+    console.log("page" + this.page)
+    this.fetch();
+  },
+
+  getPrevPage: function () {
+    this.page -= 1;
+    console.log("page" + this.page)
+    this.fetch();
+  },
+
+  getHomePage: function () {
+    this.page = 1;
+    console.log("going home");
+    this.fetch();
+  },
+
   // comparator: function(a, b) {
   //   var aModel = a.get('start_date');
   //   var bModel = b.get('start_date');
