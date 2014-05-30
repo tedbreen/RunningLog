@@ -1,19 +1,31 @@
 window.Strava.Collections.Runs = Backbone.Collection.extend({
   url: function () {
-    return "/api/runs";
+    return "/api/runs/page/" + this.page;
+  },
+
+  initialize: function(models, options) {
+    // debugger;
+    this.page = 1;
+  },
+
+  parse: function(response) {
+    // debugger;
+    // this.page = response.page;
+    this.total_pages = response.total_pages;
+    return response.models;
   },
 
   model: Strava.Models.Run,
 
-  comparator: function(a, b) {
-    var aModel = a.get('start_date');
-    var bModel = b.get('start_date');
-    if (aModel < bModel) {
-      return 1;
-    } else {
-      return -1;
-    }
-  },
+  // comparator: function(a, b) {
+  //   var aModel = a.get('start_date');
+  //   var bModel = b.get('start_date');
+  //   if (aModel < bModel) {
+  //     return 1;
+  //   } else {
+  //     return -1;
+  //   }
+  // },
 
   getOrFetch: function(id){
     var model;

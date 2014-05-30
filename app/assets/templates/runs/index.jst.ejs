@@ -43,3 +43,13 @@
 </div>
 </div>
 <%  }) %>
+
+<% for(var i = 1; i < runs.total_pages + 1; i++) { %>
+  <ul>
+    <li><a href="#/runs/page/<%= i %>"><%= i %></a></li>
+  </ul>
+<% } %>
+<!-- <button class="prev-page-button btn btn-lg btn-danger">Prev Page</button>
+<button class="next-page-button btn btn-lg btn-primary">Next Page</button> -->
+
+

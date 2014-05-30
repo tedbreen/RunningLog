@@ -14,6 +14,7 @@ gem 'sdoc', '~> 0.4.0',          group: :doc
 gem 'bcrypt'
 gem 'ejs'
 gem 'figaro'
+gem 'kaminari'
 
 group :development do
   gem 'better_errors'

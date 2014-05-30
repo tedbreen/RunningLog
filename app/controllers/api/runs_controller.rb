@@ -29,8 +29,15 @@ class Api::RunsController < ApplicationController
   end
 
   def index
-    @runs = Run.all
-    render :json => @runs
+    @runs = Run.order(:start_date => :desc).page(params[:page])
+    # @runs = Run.page(params[:page])
+    # render :json => @runs
+    # render :index => @runs
+    render :json => {
+      :models => @runs,
+      :page => params[:page],
+      :total_pages => @runs.total_pages
+    }
   end
 
   def show

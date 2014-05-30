@@ -3,16 +3,19 @@ window.Strava.Routers.AppRouter = Backbone.Router.extend({
     ""              : "runsIndex",
     "users/new"     : "userNew",
     "users/:id"     : "userShow",
+    "runs/page/:id" : "runsIndex",
     "runs/new"      : "runNew",
     "runs/calendar" : "runCalendar",
-    "runs/:id"      : "runShow"
+    "runs/:id"      : "runShow",
   },
 
-  runsIndex: function() {
+  runsIndex: function (id) {
     var indexView = new Strava.Views.RunsIndex({
       collection: Strava.Collections.runs
     });
-
+    if (id !== null) {
+      Strava.Collections.runs.page = id;
+    }
     Strava.Collections.runs.fetch();
 
     this._swapView( indexView );

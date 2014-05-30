@@ -1,0 +1,10 @@
+<div class="container">
+<ul>
+<% @runs.each do |run| %>
+<li>
+<%= run.start_date %>
+</li>
+<% end %>
+</ul>
+<%= paginate @runs %>
+</div>
