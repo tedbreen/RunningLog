@@ -17,6 +17,7 @@
 
 body {
   background: #f5f5f5;
+
 }
 
 // main container for everything
@@ -24,6 +25,10 @@ div#content {
 //  border-style: dashed;
 //  border-color: red;
   background: white;
+  padding-bottom: 20px;
+  padding-left: 25px;
+  padding-right: 25px;
+
 }
 
 .navbar {
@@ -39,6 +44,7 @@ a {
 
 //RUN SHOW PAGE
 div#run-show-header {
+  padding-top: 25px;
   font-size: 2em;
 //  border-style: dashed;
 }
@@ -72,6 +78,7 @@ table#user-show-table {
 div#avatar-col {
   padding-left: 30px;
   padding-top: 30px;
+  padding-bottom: 30px;
 //  border-style: dashed;
 //  border-color: red;
   #username {
@@ -85,7 +92,7 @@ div#avatar-col {
 }
 
 //USER SHOW PAGE
-div#feed-col {
+div#graph-col {
 //  border-style: dashed;
   padding-top: 30px;
   padding-right: 30px;
@@ -150,24 +157,38 @@ div#application {
   border-style: dashed;
 }
 
+// INDEX PAGE
 #run-index-header {
   font-size: 2em;
   line-height: 2em;
 }
 
+// INDEX PAGE
 div#index-run-panel {
-//  border-style: dashed;
-//  border-color: blue;
-//
-//  #index-panel-body {
+  #left-col-run {
 //    border-style: dashed;
-//    border-color: red;
-//  }
-//
-//  #x {
+//    border-color: purple;
+  }
+
+  #middle-col-run {
 //    border-style: dashed;
 //    border-color: green;
-//  }
+  }
+
+  #right-col-run {
+//    border-style: dashed;
+//    border-color: red;
+    padding-right: 30px;
+  }
+
+  #index-panel-map {
+//    border-style: dashed;
+//    border-color: blue;
+    float: right;
+//    width: 170px;
+//    margin-left: 65px;
+
+  }
 
   #index-run-title {
     font-size: 1.25em;
@@ -181,7 +202,7 @@ div.test {
 
 table#new-activity {
   width: 600px;
-  height: 600px;
+  height: 500px;
   margin-left: auto;
   margin-right: auto;
   tr {
@@ -223,7 +244,7 @@ a#guest-btn {
 .navbar-default .navbar-brand {
   color: #fc4c02;
 }
-//#428bca
+
 
 a#upload-link {
   background-color: #fc4c02;
@@ -273,10 +294,22 @@ div#show-city-state {
 }
 
 #gmap-user {
-  border-style: dashed;
-  border-color: green;
+//  border-style: dashed;
+//  border-color: green;
 }
 
-img#ted {
-  width: 200px;
+div#next-page-button {
+  width: 68px;
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+//  padding-right: 5px;
+//  padding-left: 5px;
+}
+
+
+
+div.footer-space {
+  height: 50px;
+  background-color: #f5f5f5;
 }

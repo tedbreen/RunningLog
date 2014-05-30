@@ -4,12 +4,10 @@ window.Strava.Collections.Runs = Backbone.Collection.extend({
   },
 
   initialize: function(models, options) {
-    // debugger;
     this.page = 1;
   },
 
   parse: function(response) {
-    // debugger;
     this.total_pages = response.total_pages;
     return response.models;
   },
@@ -17,39 +15,27 @@ window.Strava.Collections.Runs = Backbone.Collection.extend({
   model: Strava.Models.Run,
 
   getNextPage: function () {
-    // debugger;
     this.page += 1;
     console.log("page" + this.page)
-    this.fetch();
+    console.log("page button: " + Strava.Collections.runs.length)
+    this.fetch({ remove: false });
   },
 
-  getPrevPage: function () {
-    this.page -= 1;
-    console.log("page" + this.page)
-    this.fetch();
+  comparator: function(a, b) {
+    var aModel = a.get('start_date');
+    var bModel = b.get('start_date');
+    if (aModel < bModel) {
+      return 1;
+    } else {
+      return -1;
+    }
   },
 
-  getHomePage: function () {
-    this.page = 1;
-    console.log("going home");
-    this.fetch();
-  },
-
-  // SERVER IS RETURNING RESULTS IN ORDER, SO COMPARATOR NOT NEEDED
-  // comparator: function(a, b) {
-  //   var aModel = a.get('start_date');
-  //   var bModel = b.get('start_date');
-  //   if (aModel < bModel) {
-  //     return 1;
-  //   } else {
-  //     return -1;
-  //   }
-  // },
-
-  getOrFetch: function(id){
+  getOrFetch: function(id) {
     var model;
     var runs = this;
-    if (model = this.get(id)) {
+    model = this.get(id)
+    if (model !== undefined) {
       return model;
     } else {
       model = new Strava.Models.Run({ id: id });
@@ -58,13 +44,30 @@ window.Strava.Collections.Runs = Backbone.Collection.extend({
       });
       return model;
     }
+
+    // if (model = this.get(id)) {
+    //   return model;
+    // } else {
+    //   model = new Strava.Models.Run({ id: id });
+    //   model.fetch({
+    //     success: function () { runs.add(model) }
+    //   });
+    //   return model;
+    // }
   },
 
   users: function () {
     if (!this._users) {
-      this._users = new Strava.Collections.Users();
+      if (Strava.Collections.users.length < 1) {
+        Strava.Collections.users.fetch();
+      }
+      this._users = Strava.Collections.users;
     }
     return this._users;
+  //   if (!this._users) {
+  //     this._users = new Strava.Collections.Users();
+  //   }
+  //   return this._users;
   }
 
 });

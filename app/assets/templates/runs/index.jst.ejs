@@ -9,14 +9,14 @@
 </div>
 <div class="panel-body">
 <div class="row" id="index-panel-body">
-  <div class="col-xs-2 container">
+  <div class="col-xs-2 container" id="left-col-run">
     <div class="row">
     <a href="#/users/<%= run.escape( 'user_id' ) %>">
     <div class="col-xs-4 col-xs-offset-1"><img src="<%= runs.users().getOrFetch( run.getUserId() ).get('avatar') %>" width="80" height="80"></div>
     </a>
     </div>
   </div>
-  <div class="col-xs-7" id="x">
+  <div class="col-xs-7" id="middle-col-run">
   <div>
   <a href="#/users/<%= run.escape( 'user_id' ) %>">
   <%= runs.users().getOrFetch( run.getUserId() ).get('fname') + " " +
@@ -31,10 +31,10 @@
   <div><%= run.escape( 'distance' ) + " mi"%></div>
   </div>
 
-  <div class="col-xs-3" id="x">
-  <div>
+  <div class="col-xs-3" id="right-col-run">
+  <div id="index-panel-map">
   <a href="#/runs/<%= run.escape( 'id' ) %>">
-  <img id="gmap-user" src="http://maps.googleapis.com/maps/api/staticmap?center=<%= run.loc() %>&zoom=10&size=160x100&maptype=terrain&sensor=false" class="img-rounded">
+  <img id="gmap-user" src="http://maps.googleapis.com/maps/api/staticmap?center=<%= run.loc() %>&zoom=10&size=150x100&maptype=terrain&sensor=false" class="img-rounded">
   </a>
   </div>
   </div>
@@ -44,20 +44,7 @@
 </div>
 <%  }) %>
 
-<!-- <% for(var i = 1; i < runs.total_pages + 1; i++) { %>
-  <ul>
-    <li><a href="#/runs/page/<%= i %>"><%= i %></a></li>
-  </ul>
-<% } %> -->
-<div class="btn-group">
-<button type="button" class="btn btn-default home-page-button">Newest</button>
-<% if (runs.page == 1) { %>
-<button type="button" class="btn btn-default next-page-button">Next</button>
-<% } else if (runs.page == runs.total_pages) { %>
-<button type="button" class="btn btn-default prev-page-button">Prev</button>
-<% } else { %>
-<button type="button" class="btn btn-default prev-page-button">Prev</button>
-<button type="button" class="btn btn-default next-page-button">Next</button>
-<% } %>
+<div class="btn-group" id="next-page-button">
+<button type="button" class="btn btn-default next-page-button">More posts &raquo;</button>
 </div>
-<h4>Page <%= runs.page %> of <%= runs.total_pages %></h4>
+<!-- <h4>Page <%= runs.page %> of <%= runs.total_pages %></h4> -->

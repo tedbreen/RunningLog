@@ -95,17 +95,17 @@
 
 <tr>
 <td class="left"><label for="run-year">Date (YYYY)</label></td>
-<td><input type="number" name="run[year]" id="run-year" size="30" required placeholder="Enter a year"></td>
+<td><input type="number" name="run[year]" id="run-year" size="30" value="<%= (new Date()).getFullYear() %>" required></td>
 </tr>
 
 <tr>
 <td class="left"><label for="run-month">Date (MM)</label></td>
-<td><input type="number" name="run[mon]" id="run-month" size="30" required placeholder="Enter a month (1-12)"></td>
+<td><input type="number" name="run[mon]" id="run-month" size="30" value="<%= (new Date()).getMonth() + 1 %>" required></td>
 </tr>
 
 <tr>
 <td class="left"><label for="run-day">Date (DD)</label></td>
-<td><input type="number" name="run[day]" id="run-day" size="30" required placeholder="Enter a day"></td>
+<td><input type="number" name="run[day]" id="run-day" size="30" value="<%= (new Date()).getDate() %>" required></td>
 </tr>
 
 <tr>
@@ -115,17 +115,17 @@
 
 <tr>
 <td class="left"><label for="run-d-hr">Duration (HH)</label></td>
-<td><input type="text" name="run[d_hr]" id="run-d-hr" size="30"></td>
+<td><input type="text" name="run[d_hr]" id="run-d-hr" size="30" placeholder="Optional"></td>
 </tr>
 
 <tr>
 <td class="left"><label for="run-d-min">Duration (MM)</label></td>
-<td><input type="text" name="run[d_min]" id="run-d-min" size="30"></td>
+<td><input type="text" name="run[d_min]" id="run-d-min" size="30" placeholder="Optional"></td>
 </tr>
 
 <tr>
 <td class="left"><label for="run-d-sec">Duration (SS)</label></td>
-<td><input type="text" name="run[d_sec]" id="run-d-sec" size="30"></td>
+<td><input type="text" name="run[d_sec]" id="run-d-sec" size="30" placeholder="Optional"></td>
 </tr>
 
 <tr>

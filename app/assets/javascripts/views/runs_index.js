@@ -3,8 +3,6 @@ window.Strava.Views.RunsIndex = Backbone.View.extend({
 
   events: {
     "click .next-page-button" : "nextPage",
-    "click .prev-page-button" : "prevPage",
-    "click .home-page-button" : "homePage"
   },
 
   initialize: function(options) {
@@ -29,17 +27,6 @@ window.Strava.Views.RunsIndex = Backbone.View.extend({
   },
 
   nextPage: function(event) {
-    $('body').scrollTop(0);
     this.collection.getNextPage();
-  },
-
-  prevPage: function(event) {
-    $('body').scrollTop(0);
-    this.collection.getPrevPage();
-  },
-
-  homePage: function(event) {
-    $('body').scrollTop(0);
-    this.collection.getHomePage();
   }
 })

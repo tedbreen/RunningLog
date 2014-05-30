@@ -1,1 +1,46 @@
-<%= render 'sessions/form', :user => @user %>
+<div>
+<br>
+<div class="row">
+<div class="col-md-2"></div>
+
+<div class="col-md-8" id="what">
+<div id="add-session" class="panel panel-default">
+<div class="panel-heading">
+<div class="panel-title">Sign in</div>
+</div>
+<div class="panel-body">
+
+<form action="<%= session_url %>" method="post" role="form">
+<input type="hidden"
+name="authenticity_token"
+value="<%= form_authenticity_token %>">
+
+<table id='new-session'>
+
+<tr>
+  <td class="left"><label for="session-email">Email</label></td>
+  <td><input type="email" name="user[email]" id="session-email" size="30" required></td>
+</tr>
+
+<tr>
+  <td class="left"><label for="session-password">Password</label></td>
+  <td><input type="password" name="user[password]" id="session-password" size="30" required></td>
+</tr>
+
+<tr>
+<td class="left"></td>
+<td>
+<div><button type='submit' class="btn btn-default" id="btn-guest">Sign In</button> &nbsp; or &nbsp; <a href='/'>Cancel</a></div>
+</td>
+</tr>
+
+</table>
+
+
+
+</form>
+</div>
+</div>
+</div>
+</div>
+</div>

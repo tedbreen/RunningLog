@@ -40,6 +40,9 @@ class Api::RunsController < ApplicationController
     }
   end
 
+  def user
+  end
+
   def show
     @run = Run.find(params[:id])
     render :json => @run

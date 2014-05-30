@@ -5,7 +5,6 @@ window.Strava = {
   Routers: {},
 
   initialize: function () {
-    // var $rootEl = $('#content');
     new Strava.Routers.AppRouter({
       $rootEl: $('#content')
     });

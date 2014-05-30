@@ -7,7 +7,7 @@ window.Strava.Views.RunShow = Backbone.View.extend({
   },
 
   render: function () {
-
+    $('body').scrollTop(0);
     var renderedContent = this.template({
       run: this.model,
 
