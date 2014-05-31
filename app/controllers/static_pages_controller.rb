@@ -6,4 +6,5 @@ class StaticPagesController < ApplicationController
       render "homepage"
     end
   end
+
 end
