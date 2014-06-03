@@ -44,6 +44,18 @@ window.Strava.Models.Run = Backbone.Model.extend({
             javaDate.getDate() + ", " +
             javaDate.getFullYear() );
   },
+  
+  justTime: function () {
+    var time = this.get( 'start_time' );
+    if (time === undefined) {
+      return "";
+    } else {
+    if (time[11] === '0') {
+      return time.slice(12, 16);
+    }
+    return time.slice(11, 16);
+    }
+  },  
 
   loc: function () {
     var city = this.get( 'city' );

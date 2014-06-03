@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140529220658) do
+ActiveRecord::Schema.define(version: 20140603015405) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -28,6 +28,7 @@ ActiveRecord::Schema.define(version: 20140529220658) do
     t.float    "distance",    null: false
     t.text     "description", null: false
     t.datetime "start_date",  null: false
+    t.time     "start_time",  null: false
   end
 
   add_index "runs", ["city"], name: "index_runs_on_city", using: :btree
@@ -35,6 +36,7 @@ ActiveRecord::Schema.define(version: 20140529220658) do
   add_index "runs", ["duration"], name: "index_runs_on_duration", using: :btree
   add_index "runs", ["run_type"], name: "index_runs_on_run_type", using: :btree
   add_index "runs", ["start_date"], name: "index_runs_on_start_date", using: :btree
+  add_index "runs", ["start_time"], name: "index_runs_on_start_time", using: :btree
   add_index "runs", ["state"], name: "index_runs_on_state", using: :btree
   add_index "runs", ["user_id"], name: "index_runs_on_user_id", using: :btree
 

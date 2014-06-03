@@ -32,6 +32,6 @@ class Run < ActiveRecord::Base
     :inverse_of => :runs
   )
 
-  paginates_per 20
+  paginates_per 15
 
 end

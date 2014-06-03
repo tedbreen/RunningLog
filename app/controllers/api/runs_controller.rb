@@ -29,7 +29,7 @@ class Api::RunsController < ApplicationController
   end
 
   def index
-    @runs = Run.order(:start_date => :desc).page(params[:page])
+    @runs = Run.order(:start_date => :desc, :start_time => :desc).page(params[:page])
     # @runs = Run.page(params[:page])
     # render :json => @runs
     # render :index => @runs
