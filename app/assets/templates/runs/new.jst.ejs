@@ -94,18 +94,13 @@
 </tr>
 
 <tr>
-<td class="left"><label for="run-year">Date (YYYY)</label></td>
-<td><input type="number" name="run[year]" id="run-year" size="30" value="<%= (new Date()).getFullYear() %>" required></td>
+<td class="left"><label for="run-year">Date</label></td>
+<td><input type="text" name="run[date]" id="run-year" size="30" required placeholder="YYYY/MM/DD"></td>
 </tr>
 
 <tr>
-<td class="left"><label for="run-month">Date (MM)</label></td>
-<td><input type="number" name="run[mon]" id="run-month" size="30" value="<%= (new Date()).getMonth() + 1 %>" required></td>
-</tr>
-
-<tr>
-<td class="left"><label for="run-day">Date (DD)</label></td>
-<td><input type="number" name="run[day]" id="run-day" size="30" value="<%= (new Date()).getDate() %>" required></td>
+<td class="left"><label for="run-month">Time (24-hr)</label></td>
+<td><input type="text" name="run[time]" id="run-month" size="30" required placeholder="HH:MM:SS"></td>
 </tr>
 
 <tr>
