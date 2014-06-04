@@ -18,7 +18,7 @@
 
 class Run < ActiveRecord::Base
   validates :user_id, :presence => true
-  validates :start_date, :presence => true
+  validates :time_date, :presence => true
   validates :run_type, :presence => true
   validates :distance, :presence => true
   validates :city, :presence => true

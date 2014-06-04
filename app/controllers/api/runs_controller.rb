@@ -12,9 +12,12 @@ class Api::RunsController < ApplicationController
     @run = Run.new( params[:run].permit(:run_type, :title, :city, :state,
                                         :distance, :description)
     )
+    
     @run.user_id = current_user.id
 
-    @run.start_date = set_date( @p[:year].to_i, @p[:mon].to_i, @p[:day].to_i )
+    @run.time_date = set_date( @p[:year].to_i, @p[:mon].to_i, @p[:day].to_i,
+                               @p[:hour].to_i, @p[:min].to_i, @p[:sec].to_i
+    )
 
     @run.duration = set_duration( @p[:d_hr].to_i,
                                   @p[:d_min].to_i,
@@ -29,7 +32,7 @@ class Api::RunsController < ApplicationController
   end
 
   def index
-    @runs = Run.order(:start_date => :desc, :start_time => :desc).page(params[:page])
+    @runs = Run.order(:time_date => :desc).page(params[:page])
     # @runs = Run.page(params[:page])
     # render :json => @runs
     # render :index => @runs
@@ -50,8 +53,8 @@ class Api::RunsController < ApplicationController
 
   private
 
-  def set_date(yr,mo,da)
-    DateTime.new(yr,mo,da,12,0,0)
+  def set_date(yr,mo,da,hr,mi,se)
+    DateTime.new(yr,mo,da,hr,mi,se)
   end
 
   def set_duration(hr, min, sec)

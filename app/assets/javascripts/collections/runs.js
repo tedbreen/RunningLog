@@ -22,8 +22,8 @@ window.Strava.Collections.Runs = Backbone.Collection.extend({
   },
 
   comparator: function(a, b) {
-    var aModel = a.get('start_date');
-    var bModel = b.get('start_date');
+    var aModel = a.get('time_date');
+    var bModel = b.get('time_date');
     if (aModel < bModel) {
       return 1;
     } else {

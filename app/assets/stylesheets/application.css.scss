@@ -60,10 +60,27 @@ div#run-panel {
 //  }
 }
 
+div#show-run-date {
+  font-size: 1.6em;
+}
+
+div#show-run-title {
+  font-size: 1.6em;
+}
+
 div#run-show-distance {
 //  border-style: dashed;
 //  border-color: red;
-  font-size: 2em;
+  font-size: 1.6em;
+  font-weight: bold;
+}
+
+p.lead {
+  font-size: 1.25em;
+}
+
+span.date {
+  font-weight: bold;
 }
 
 //USER SHOW PAGE

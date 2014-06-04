@@ -16,12 +16,10 @@ run.users().getOrFetch( run.getUserId() ).get('lname') %></a> &#8212 <%= run.run
   </a>
   </div>
   <div class="col-xs-5">
-  <div>
-  <h4>
-  <%= run.displayDate() %> &#8212 <%= run.justTime() %>
-  </h4>
+  <div id="show-run-date">
+  <%= run.displayDate() %>
   </div>
-  <div>
+  <div id="show-run-title">
   <%= run.escape( 'title' ) %>
   </div>
   <div id="run-show-distance">
@@ -32,7 +30,7 @@ run.users().getOrFetch( run.getUserId() ).get('lname') %></a> &#8212 <%= run.run
 <hr>
 
 <p class="lead">
-<%= run.escape( 'description' ) %>
+<span class="date"><%= run.displayTime() %></span> &#8212 <%= run.escape( 'description' ) %>
 </p>
 
 <hr>

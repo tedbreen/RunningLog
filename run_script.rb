@@ -9,14 +9,14 @@ end
 runs.each do |run|
   run[2] = run[2].split(':')
 end
-f = File.new("seeds.rb", "w")
+f = File.new("seed_data.rb", "w")
 
 runs.each do |run|
 
   type = run[0]
-  year = run[1][2]
-  month = run[1][0]
-  day = run[1][1]
+  year = (run[1][2]).to_i
+  month = (run[1][0]).to_i
+  day = (run[1][1]).to_i
   hour = (run[2][0]).to_i
   min = (run[2][1]).to_i
   sec = (run[2][2]).to_i
@@ -26,14 +26,8 @@ runs.each do |run|
   state = run[6]
   description = run[7]
 
-  hour = hour - 8
-  
-  if hour < 0
-    hour = 24 + hour
-  end
 
-
-  line = "Run.create(user_id:1, run_type:#{type}, start_time: Time.new(2010, 1, 1, #{hour}, #{min}, #{sec}), start_date: DateTime.new(#{year},#{month},#{day},12,0,0), distance:#{distance}, city:'#{city}', state:'#{state}', title:'#{title}', description:'#{description}')\n"
+  line = "Run.create(user_id:1, run_type:#{type}, time_date: DateTime.new(#{year},#{month},#{day},#{hour},#{min},#{sec}), distance:#{distance}, city:'#{city}', state:'#{state}', title:'#{title}', description:'#{description}')\n"
   f.write(line)
 end
 

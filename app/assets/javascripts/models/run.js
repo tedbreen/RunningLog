@@ -30,7 +30,7 @@ window.Strava.Models.Run = Backbone.Model.extend({
   },
 
   displayDate: function () {
-    var date = this.get( 'start_date' );
+    var date = this.get( 'time_date' );
     var javaDate = new Date(date);
     var months = ["January", "February", "March", "April",
                   "May", "June", "July", "August",
@@ -38,24 +38,36 @@ window.Strava.Models.Run = Backbone.Model.extend({
 
     var days = ["Sunday", "Monday", "Tuesday", "Wednesday",
                 "Thursday", "Friday", "Saturday"]
-
+                
     return (days[javaDate.getDay()] + ", " +
             months[javaDate.getMonth()] + " " +
             javaDate.getDate() + ", " +
-            javaDate.getFullYear() );
+            javaDate.getFullYear());
   },
   
-  justTime: function () {
-    var time = this.get( 'start_time' );
-    if (time === undefined) {
-      return "";
-    } else {
-    if (time[11] === '0') {
-      return time.slice(12, 16);
+  displayTime: function () {
+    var date = this.get( 'time_date' );
+    var javaDate = new Date(date);
+
+    var hours = javaDate.getUTCHours();
+    
+    var mins = javaDate.getUTCMinutes();
+    
+    if (mins < 10) { mins = "0" + mins }
+    
+    var fullTime = hours + ":" + mins;
+
+    if ( hours < 12 ) {
+      fullTime = fullTime + " AM";
+    } else if ( hours === 12 ) {
+      fullTime = fullTime + " PM";
+    } else if (hours > 12) {
+      hours = hours - 12;
+      fullTime = hours + ":" + mins + " PM";
     }
-    return time.slice(11, 16);
-    }
-  },  
+
+    return ( fullTime );
+  },
 
   loc: function () {
     var city = this.get( 'city' );
