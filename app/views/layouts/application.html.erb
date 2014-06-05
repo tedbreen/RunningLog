@@ -1,20 +1,23 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Straava ! Final Project</title>
+  <title>Project Strava</title>
   <%= stylesheet_link_tag    'application', :media => "all" %>
   <%= javascript_include_tag 'application' %>
   <%= csrf_meta_tags %>
 </head>
-<body>
+
+<% if current_user.nil? %>
+  <body class="homepage">
+<% else %>
+  <body class="root">
+<% end %>
   <div>
-    <header>
-      <%= render 'layouts/navbar' %>
-    </header>
-
+  <header>
+  <%= render 'layouts/navbar' %>
+  </header>
   </div>
+  <%= yield %>
+  </body>  
 
-<%= yield %>
-
-</body>
 </html>

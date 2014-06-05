@@ -1,15 +1,8 @@
-<div>
 <br>
-<div class="row">
-<div class="col-md-2"></div>
-
-<div class="col-md-8" id="what">
 <div id="add-session" class="panel panel-default">
-<div class="panel-heading">
-<div class="panel-title">Sign in</div>
-</div>
-<div class="panel-body">
 
+<div class="panel-body">
+<div class="panel-heading">Sign in</div>
 <form action="<%= session_url %>" method="post" role="form">
 <input type="hidden"
 name="authenticity_token"
@@ -30,17 +23,13 @@ value="<%= form_authenticity_token %>">
 <tr>
 <td class="left"></td>
 <td>
-<div><button type='submit' class="btn btn-default" id="btn-guest">Sign In</button> &nbsp; or &nbsp; <a href='/'>Cancel</a></div>
+<div><button type='submit' class="btn btn-lg btn-default" id="btn-sign-in">Sign In</button> &nbsp; or &nbsp; <a href='/'>Cancel</a>
+</div>
 </td>
 </tr>
 
 </table>
-
-
-
 </form>
-</div>
-</div>
-</div>
+<br>
 </div>
 </div>

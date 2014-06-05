@@ -1,14 +1,15 @@
-<div class="container">
+<!-- <div class="container">
 <br>
 <div class="row">
 <div class="col-md-2"></div>
 
-<div class="col-md-8" id="what">
+<div class="col-md-8" id="what"> -->
+<br>
 <div id="add-user" class="panel panel-default">
-<div class="panel-heading">
-<div class="panel-title">Sign Up</div>
-</div>
 <div class="panel-body">
+<div class="panel-heading">Sign Up</div>
+
+
 
 <form action="<%= api_users_url %>" method="post" role="form">
 <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
@@ -116,12 +117,10 @@
 <td class="left"></td>
 <td>
 <div>
-<button type='submit' class="btn btn-default">Sign up</button> &nbsp; or &nbsp; <a href='/'>Cancel</a></div>
+<button type='submit' id="btn-sign-up" class="btn btn-lg btn-default">Sign up</button> &nbsp; or &nbsp; <a href='/'>Cancel</a></div>
 </div>
 </td>
 </tr>
-
-<tr></tr><tr></tr><tr></tr><tr></tr><tr></tr><tr></tr><tr></tr>
 
 </table>
 </form>'
@@ -132,8 +131,8 @@
 </div>
 
 <!-- empty div column in container -->
-<div class="col-md-2"></div>
+<!-- <div class="col-md-2"></div>
 </div>
-</div>
+</div> -->
 
 
