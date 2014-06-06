@@ -9,11 +9,10 @@
 #  state       :string(255)      not null
 #  created_at  :datetime
 #  updated_at  :datetime
-#  duration    :float
 #  title       :string(255)      not null
 #  distance    :float            not null
 #  description :text             not null
-#  start_date  :datetime         not null
+#  time_date   :datetime         not null
 #
 
 class Run < ActiveRecord::Base

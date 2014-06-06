@@ -37,6 +37,15 @@ class Api::RunsController < ApplicationController
     render :json => @run.destroy
   end
   
+  def update
+    @run = Run.find(params[:id])
+    if @run.update_attributes(run_params)
+      render :json => @run
+    else
+      render :json => @run.errors.full_messages
+    end
+  end
+  
   #custom route
   def date_range
     @runs = Run.where(:time_date => DateTime.parse(params[:start_date])..DateTime.parse(params[:end_date])).
