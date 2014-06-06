@@ -34,7 +34,7 @@ window.Strava.Collections.Runs = Backbone.Collection.extend({
   getOrFetch: function(id) {
     var model;
     var runs = this;
-    model = this.get(id)
+    model = this.get(id);
     if (model !== undefined) {
       return model;
     } else {
@@ -44,16 +44,6 @@ window.Strava.Collections.Runs = Backbone.Collection.extend({
       });
       return model;
     }
-
-    // if (model = this.get(id)) {
-    //   return model;
-    // } else {
-    //   model = new Strava.Models.Run({ id: id });
-    //   model.fetch({
-    //     success: function () { runs.add(model) }
-    //   });
-    //   return model;
-    // }
   },
 
   users: function () {
@@ -64,10 +54,6 @@ window.Strava.Collections.Runs = Backbone.Collection.extend({
       this._users = Strava.Collections.users;
     }
     return this._users;
-  //   if (!this._users) {
-  //     this._users = new Strava.Collections.Users();
-  //   }
-  //   return this._users;
   }
 
 });

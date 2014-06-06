@@ -10,13 +10,6 @@ window.Strava.Views.UserShow = Backbone.View.extend({
     $('body').scrollTop(0);
     var renderedContent = this.template({
       user: this.model
-
-      // justTime: function(time){
-      //   if (time[11] === '0') {
-      //     return time.slice(12, 16);
-      //   }
-      //   return time.slice(11, 16);
-      // }
     });
     this.$el.html( renderedContent );
     return this;

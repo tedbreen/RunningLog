@@ -15,22 +15,17 @@ class Api::RunsController < ApplicationController
     
     @run.user_id = current_user.id
     
-    date = @p[:date].split('/')
+    date = @p[:date].split('-')
     time = @p[:time].split(':')
     
     @run.time_date = set_date( date[0].to_i, date[1].to_i, date[2].to_i,
-                               time[0].to_i, time[1].to_i, time[2].to_i
+                               time[0].to_i, time[1].to_i
     )
-
-    # @run.time_date = set_date( @p[:year].to_i, @p[:mon].to_i, @p[:day].to_i,
-    #                            @p[:hour].to_i, @p[:min].to_i, @p[:sec].to_i
-    # )
 
     @run.duration = set_duration( @p[:d_hr].to_i,
                                   @p[:d_min].to_i,
                                   @p[:d_sec].to_i
     )
-
     if @run.save
       render :json => @run
     else
@@ -57,11 +52,24 @@ class Api::RunsController < ApplicationController
     @run = Run.find(params[:id])
     render :json => @run
   end
+  
+  #custom route
+  def date_range
+    @runs = Run.where(:time_date => DateTime.parse(params[:start_date])..DateTime.parse(params[:end_date])).
+                      order(:time_date => :desc).page(params[:page]
+    )
+
+    render :json => {
+      :models => @runs,
+      :page => params[:page],
+      :total_pages => @runs.total_pages
+    }
+  end
 
   private
 
-  def set_date(yr,mo,da,hr,mi,se)
-    DateTime.new(yr,mo,da,hr,mi,se)
+  def set_date(yr,mo,da,hr,mi)
+    DateTime.new(yr,mo,da,hr,mi)
   end
 
   def set_duration(hr, min, sec)

@@ -8,7 +8,6 @@ window.Strava.Routers.AppRouter = Backbone.Router.extend({
     "users/:id"     : "userShow",
     "runs/page/:id" : "runsIndex",
     "runs/new"      : "runNew",
-    "runs/calendar" : "runCalendar",
     "runs/:id"      : "runShow",
   },
 
@@ -32,7 +31,6 @@ window.Strava.Routers.AppRouter = Backbone.Router.extend({
     var showView = new Strava.Views.UserShow({
       model: showModel
     });
-
     this._swapView( showView );
   },
 
@@ -42,19 +40,12 @@ window.Strava.Routers.AppRouter = Backbone.Router.extend({
     var runView = new Strava.Views.RunShow({
       model: runModel
     });
-
     this._swapView( runView );
-
   },
 
   runNew: function () {
     var newView = new Strava.Views.RunNew();
     this._swapView( newView );
-  },
-
-  runCalendar: function () {
-    var calendarView = new Strava.Views.RunCalendar();
-    this._swapView( calendarView );
   },
 
   _swapView: function(view) {

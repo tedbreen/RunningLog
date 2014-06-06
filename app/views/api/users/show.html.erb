@@ -1,14 +1,15 @@
-<div class="container show-page">
-  <div class="col-xs-3 left">
-    <img id="ted" src="https://avatars.githubusercontent.com/u/5546294?">
-  </div>
-  <div class="col-xs-3 right">
-    <div id="show-full-name">
-      <%= @user.fname + " " + @user.lname %>
-    </div>
-    <div id="show-city-state">
-      <%= @user.city %>, <%= @user.state %>
-    </div>
-  </div>
-</div>
+<!-- EXPERIMENT -->
+
+<h3><%= @user.fname + " " + @user.lname %></h3>
+<h3><%= @user.city %>, <%= @user.state %></h3>
+<img id="ted" src="https://avatars.githubusercontent.com/u/5546294?">
+
+<form action="<%= date_range_api_runs_url %>" method="get">
+<input type="hidden"
+         name="authenticity_token"
+         value="<%= form_authenticity_token %>">
+<input type="date" name="start_date">
+<input type="date" name="end_date">
+<button class="btn btn-primary" type="submit">Search</button>
+</form>
 

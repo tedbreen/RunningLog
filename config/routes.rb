@@ -4,6 +4,9 @@ Rails.application.routes.draw do
   namespace :api do
     resources :runs, :only => [:new, :create, :show, :index] do
       get 'page/:page', :action => :index, :on => :collection
+      collection do
+        get 'date_range'
+      end
     end
     resources :users, :only => [:show, :new, :create, :index]
   end

@@ -30,8 +30,6 @@ body.root {
 
 // main container for everything
 div#content {
-//  border-style: dashed;
-//  border-color: red;
   background: white;
   padding-bottom: 20px;
   padding-left: 25px;
@@ -54,18 +52,11 @@ a {
 div#run-show-header {
   padding-top: 25px;
   font-size: 2em;
-//  border-style: dashed;
 }
 
 div#run-panel {
-//  border-style: dashed;
-//  border-color: red;
   background: white;
   border: 0;
-//  #run-avatar {
-//    border-style: dashed;
-//    border-color: green;
-//  }
 }
 
 div#show-run-date {
@@ -77,8 +68,6 @@ div#show-run-title {
 }
 
 div#run-show-distance {
-//  border-style: dashed;
-//  border-color: red;
   font-size: 1.6em;
   font-weight: bold;
 }
@@ -91,21 +80,12 @@ span.date {
   font-weight: bold;
 }
 
-//USER SHOW PAGE
-table#user-show-table {
-//  width: 500;
-  border-style: dashed;
-  border-color: green;
-}
-
 
 //USER SHOW PAGE
 div#avatar-col {
   padding-left: 30px;
   padding-top: 30px;
   padding-bottom: 30px;
-//  border-style: dashed;
-//  border-color: red;
   #username {
     font-size: 26px;
     font-weight: bold;
@@ -118,7 +98,6 @@ div#avatar-col {
 
 //USER SHOW PAGE
 div#graph-col {
-//  border-style: dashed;
   padding-top: 30px;
   padding-right: 30px;
   #user-run-title-link {
@@ -126,14 +105,6 @@ div#graph-col {
   }
   #user-run-distance {
     font-size: 1.1em;
-  }
-  div#user-run-left {
-//    border-style: dashed;
-//    border-color: blue;
-  }
-  div#user-run-right {
-//    border-style: dashed;
-//    border-color: red;
   }
 }
 
@@ -202,7 +173,6 @@ div.panel#add-session {
   margin-left: auto;
   margin-right: auto;
   .panel-heading {
-//    text-align: center;
     font-size: 2em;
   }
   select {
@@ -221,8 +191,6 @@ div.panel#add-session {
   }
 }
 
-
-
 div.panel-title {
   font-size: 2.2em;
 }
@@ -239,29 +207,12 @@ div#application {
 
 // INDEX PAGE
 div#index-run-panel {
-  #left-col-run {
-//    border-style: dashed;
-//    border-color: purple;
-  }
-
-  #middle-col-run {
-//    border-style: dashed;
-//    border-color: green;
-  }
-
   #right-col-run {
-//    border-style: dashed;
-//    border-color: red;
     padding-right: 30px;
   }
 
   #index-panel-map {
-//    border-style: dashed;
-//    border-color: blue;
     float: right;
-//    width: 170px;
-//    margin-left: 65px;
-
   }
 
   #index-run-title {
@@ -276,15 +227,9 @@ div.test {
 
 table#new-activity {
   width: 600px;
-  height: 500px;
+  height: 450px;
   margin-left: auto;
   margin-right: auto;
-  tr {
-//    border-style: dashed;
-//    border-color: red;
-  }
-
-//  border-style: dotted;
 }
 
 table#new-user {
@@ -292,15 +237,6 @@ table#new-user {
   height: 400px;
   margin-left: auto;
   margin-right: auto;
-  tr {
-//    border-style: dashed;
-//    border-color: red;
-  }
-  td.left {
-//    border-style: dashed;
-//    border-color: green;
-  }
-//  border-style: dotted;
 }
 
 a#log-in-btn {
@@ -323,7 +259,6 @@ a#guest-btn {
   font-family: 'Orbitron', sans-serif;
 }
 
-
 a#upload-link {
   background-color: #fc4c02;
   color: white;
@@ -331,17 +266,14 @@ a#upload-link {
   border-color: #fc4c02;
   width: 70px;
   height: 30px;
-//  text-align: center;
   line-height: 0%;
   padding-right: 60px;
-
 }
 
 li#button-li {
   padding-top: 10px;
   padding-bottom: 10px;
   text-align: center;
-//  border-style: solid;
 }
 
 td {
@@ -353,41 +285,20 @@ td.left {
   float: right;
 }
 
-div.left {
-  border-style: dashed;
-  border-color: red;
-}
-
-div.right {
-  border-style: dashed;
-  border-color: blue;
-}
-
-div#show-full-name {
-  font-size: 1.3em;
-}
-
-div#show-city-state {
-  font-size: 1em;
-}
-
-#gmap-user {
-//  border-style: dashed;
-//  border-color: green;
-}
-
 div#next-page-button {
   width: 68px;
   margin-left: auto;
   margin-right: auto;
   display: block;
-//  padding-right: 5px;
-//  padding-left: 5px;
 }
-
-
 
 div.footer-space {
   height: 50px;
   background-color: #f5f5f5;
+}
+
+// SHOW PAGE, ERB TEMPLATE
+img#ted {
+  width: 200px;
+  height: 200px;
 }

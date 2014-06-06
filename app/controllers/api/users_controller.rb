@@ -26,8 +26,8 @@ class Api::UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
-    render :json => @user
-    # render :show
+    render :json => @user # => for Backbone EJS template
+    # render :show  # => for ERB template
   end
 
   private
