@@ -1,5 +1,5 @@
 <div class="row container" id="run-show-header">
-<a href="#users/<%= run.getUserId() %>">
+<a href="#/users/<%= run.getUserId() %>">
 <%= run.users().getOrFetch( run.getUserId() ).get('fname') + " " +
 run.users().getOrFetch( run.getUserId() ).get('lname') %></a> &#8212 <%= run.runType()%>
 </div>
@@ -11,7 +11,7 @@ run.users().getOrFetch( run.getUserId() ).get('lname') %></a> &#8212 <%= run.run
 
 <div class="row">
   <div class="col-xs-2" id="run-avatar">
-  <a href="#users/<%= run.getUserId() %>">
+  <a href="#/users/<%= run.getUserId() %>">
   <img src="<%= run.users().getOrFetch( run.getUserId() ).get('avatar') %>" class="img-responsive img-rounded">
   </a>
   </div>
@@ -32,6 +32,10 @@ run.users().getOrFetch( run.getUserId() ).get('lname') %></a> &#8212 <%= run.run
 <p class="lead">
 <span class="date"><%= run.displayTime() %></span> &#8212 <%= run.escape( 'description' ) %>
 </p>
+
+<% if ( run.escape( 'user_id' ) == currentUserId ) { %>
+<button id="destroy-run">Delete</button>
+<% } %>
 
 <hr>
 

@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   root :to => 'static_pages#root'
 
   namespace :api do
-    resources :runs, :only => [:new, :create, :show, :index] do
+    resources :runs, :only => [:new, :create, :show, :index, :destroy] do
       get 'page/:page', :action => :index, :on => :collection
       collection do
         get 'date_range'
