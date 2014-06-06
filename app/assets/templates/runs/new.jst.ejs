@@ -93,7 +93,7 @@
   </select></td>
 </tr>
 
-<tr>
+<!-- <tr>
 <td class="left"><label for="run-year">Date</label></td>
 <td><input type="date" name="run[date]" id="run-year" size="30" required></td>
 </tr>
@@ -101,6 +101,11 @@
 <tr>
 <td class="left"><label for="run-time">Time</label></td>
 <td><input type="time" name="run[time]" id="run-time" size="30" required></td>
+</tr> -->
+
+<tr>
+<td class="left"><label for="run-time">Time</label></td>
+<td><input type="datetime-local" name="run[time_date]" id="run-time" size="30" required></td>
 </tr>
 
 <tr>
@@ -127,6 +132,8 @@
 <td class="left"><label for="run-desc">Description</label></td>
 <td><textarea name="run[description]" id="run-desc" required placeholder="Enter a description"></textarea></td>
 </tr>
+
+<input type="hidden" name="run[user_id]" value="<%= currentUserId %>">
 
 <tr>
 <td class="left"></td>
