@@ -82,31 +82,22 @@ span.date {
 
 
 //USER SHOW PAGE
-div#avatar-col {
-  padding-left: 30px;
-  padding-top: 30px;
-  padding-bottom: 30px;
-  #username {
+table.user-show {
+  width: 600px;
+  td.range-query {
+    margin-left: auto;
+    margin-right: auto;
+  }
+  div#username {
     font-size: 26px;
     font-weight: bold;
   }
-  #location {
+  div#location {
     font-size: 20px;
     color: gray;
   }
 }
 
-//USER SHOW PAGE
-div#graph-col {
-  padding-top: 30px;
-  padding-right: 30px;
-  #user-run-title-link {
-    font-size: 1.25em;
-  }
-  #user-run-distance {
-    font-size: 1.1em;
-  }
-}
 
 //NEW RUN UPLOAD PAGE
 div.panel#add-run {

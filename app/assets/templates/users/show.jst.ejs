@@ -1,9 +1,35 @@
-<div class="row" id="user-show">
+<br>
+<table class="user-show">
+<tr>
 
-<div id="avatar-col" class="col-md-4">
+<td class="avatar-username">
 <div><img src="<%= user.escape('avatar') %>" height="200" width="200" class="img-rounded"></div>
 <div id="username"><%= user.escape('fname') + " " + user.escape('lname') %></div>
 <div id="location"><%= user.escape('city') + ", " + user.escape('state') %></div>
-</div>
+</td>
 
-</div>
+<td class="range-query">
+<form>
+  <table>
+  <h3>Display a range of runs</h3>
+  <tr>
+  <td class="left"><label for="start-date">Start date</label></td>
+  <td><input type="date" id="start-date"></td>
+  </tr>
+  <tr>
+  <td class="left"><label for="end-date">End date</label></td>
+  <td><input type="date" id="end-date"></td>
+  </tr>
+  <td class="left"></td>
+  <td>
+  <button type='submit' class="btn btn-primary">Submit</button>
+  </td>
+  </table>
+</form>
+</td>
+
+</tr>
+
+</table>
+
+<div id="child-views"></div>
