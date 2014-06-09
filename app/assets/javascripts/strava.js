@@ -29,4 +29,17 @@ var weekMaker = function (date) {
     week.push( new Date(year, month, start + i) );
   }
   return week;
-}
+};
+
+var newDate = function(dateStr, timeStr, ampm) {
+  var date = dateStr.split('/');
+  var month = parseInt( date[0] ) - 1;
+  var day = parseInt( date[1] );
+  var year = parseInt( date[2] );
+  
+  var time = timeStr.split(':');
+  var hour = parseInt( time[0] );
+  var min = parseInt( time[1] );
+  
+  return new Date(year, month, day, hour, min, 0);
+};

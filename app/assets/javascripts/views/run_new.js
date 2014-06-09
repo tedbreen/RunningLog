@@ -15,8 +15,9 @@ window.Strava.Views.RunNew = Backbone.View.extend({
   submit: function (event) {
     event.preventDefault();
     var params = $(event.currentTarget).serializeJSON();
+    params.run.time_date = newDate( params.date, params.time, params.ampm );
+    delete params.date; delete params.time; delete params.ampm
     var newRun = new Strava.Models.Run(params);
-    // debugger;
     newRun.save({}, {
       success: function () {
         Strava.Collections.runs.add( newRun );
@@ -24,11 +25,11 @@ window.Strava.Views.RunNew = Backbone.View.extend({
           trigger: true
         });
       },
-
+    
       error: function() {
         Backbone.history.navigate("runs/new", { trigger: true });
       }
-
+    
     });
   }
 })

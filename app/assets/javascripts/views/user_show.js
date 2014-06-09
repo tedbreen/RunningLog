@@ -12,6 +12,11 @@ window.Strava.Views.UserShow = Backbone.View.extend({
       user: this.model
     });
     this.$el.html( renderedContent );
+    
+    // experiment
+    var testView = new Strava.Views.Test();
+    this.$("#child-views").html(testView.render().$el);
+    
     return this;
   }
 })
