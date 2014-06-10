@@ -31,7 +31,7 @@ var weekMaker = function (date) {
   return week;
 };
 
-var newDate = function(dateStr, timeStr, ampm) {
+var newDate = function(dateStr, timeStr) {
   var date = dateStr.split('/');
   var month = parseInt( date[0] ) - 1;
   var day = parseInt( date[1] );
