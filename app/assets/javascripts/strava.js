@@ -41,5 +41,6 @@ var newDate = function(dateStr, timeStr) {
   var hour = parseInt( time[0] );
   var min = parseInt( time[1] );
   
-  return new Date(year, month, day, hour, min, 0);
+  var jDate = new Date(year, month, day, hour, min, 0);
+  return jDate;
 };

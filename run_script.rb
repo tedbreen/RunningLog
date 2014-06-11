@@ -27,7 +27,7 @@ runs.each do |run|
   description = run[7]
 
 
-  line = "Run.create(user_id:1, run_type:#{type}, time_date: DateTime.new(#{year},#{month},#{day},#{hour},#{min},#{sec}), distance:#{distance}, city:'#{city}', state:'#{state}', title:'#{title}', description:'#{description}')\n"
+  line = "Run.create(user_id:1, run_type:#{type}, time_date: DateTime.new(#{year},#{month},#{day},#{hour},#{min},#{sec},'-7'), distance:#{distance}, city:'#{city}', state:'#{state}', title:'#{title}', description:'#{description}')\n"
   f.write(line)
 end
 

@@ -48,15 +48,10 @@ window.Strava.Models.Run = Backbone.Model.extend({
   displayTime: function () {
     var date = this.get( 'time_date' );
     var javaDate = new Date(date);
-
-    var hours = javaDate.getUTCHours();
-    
-    var mins = javaDate.getUTCMinutes();
-    
+    var hours = javaDate.getHours();
+    var mins = javaDate.getMinutes();
     if (mins < 10) { mins = "0" + mins }
-    
     var fullTime = hours + ":" + mins;
-
     if ( hours < 12 ) {
       fullTime = fullTime + " AM";
     } else if ( hours === 12 ) {
@@ -65,7 +60,6 @@ window.Strava.Models.Run = Backbone.Model.extend({
       hours = hours - 12;
       fullTime = hours + ":" + mins + " PM";
     }
-
     return ( fullTime );
   },
 
