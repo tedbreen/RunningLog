@@ -3,6 +3,7 @@
 
 <div class="panel-body">
 <div class="panel-heading">Sign in</div>
+<div class="signup-error"><%= render 'layouts/errors' %></div>
 <form action="<%= session_url %>" method="post" role="form">
 <input type="hidden"
 name="authenticity_token"

@@ -111,7 +111,15 @@ div.panel#add-run {
 }
 
 //NEW USER SIGN UP PAGE
+
 div.panel#add-user {
+  .signup-error {
+    width: 350px;
+    margin-left: auto;
+    margin-right: auto;
+    color: red;
+    text-align: center;
+  }
   select {
     font-size: 1em;
   }
@@ -162,6 +170,13 @@ div.panel#homepage {
 
 //SESSION SIGN IN PAGE
 div.panel#add-session {
+  .signup-error {
+    width: 350px;
+    margin-left: auto;
+    margin-right: auto;
+    color: red;
+    text-align: center;
+  }
   border: none;
   background-color: rgba(255,255,255,0.5);
   width: 400px;

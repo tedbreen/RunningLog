@@ -9,7 +9,9 @@ class SessionsController < ApplicationController
     )
 
     if @user.nil?
-      render :json => "Incorrect email and/or password"
+      # render :json => "Incorrect email and/or password"
+      flash.now[:errors] = ["Incorrect email and/or password"]
+      render :new
     else
       login!(@user)
       redirect_to root_url

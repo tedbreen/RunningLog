@@ -23,7 +23,7 @@ class User < ActiveRecord::Base
 
   validates :email, :presence => true
   validates :password_digest, :presence => true
-  validates :password, :length => { :minimum => 1, :allow_nil => true }
+  validates :password, :length => { :minimum => 3, :allow_nil => true }
   validates :session_token, :presence => true
   validates :gender, :presence => true
   validates :avatar, :presence => true

@@ -40,7 +40,7 @@ u3 = User.new(email: "guest@email.com",
 )
 u3.password = "guest"
 u3.save
-
+Run.create(user_id:1, run_type:0, time_date: DateTime.new(2014,6,10,19,30,0,'-7'), distance:4.9, city:'San Francisco', state:'CA', title:'Backpack run (commute)', description:'Ran home from App Academy. Still sore, but feeling better.')
 Run.create(user_id:1, run_type:0, time_date: DateTime.new(2014,6,9,18,10,0,'-7'), distance:4.9, city:'San Francisco', state:'CA', title:'Backpack run (commute)', description:'Ran home from App Academy. Very sore.  Legs are trashed from Dipsea.')
 Run.create(user_id:1, run_type:3, time_date: DateTime.new(2014,6,8,9,20,0,'-7'), distance:7, city:'Mill Valley', state:'CA', title:'RACE: trail', description:'DIpsea.  Runners, section Z (1 min headstart on scratch).  Overall finish 582.  Runner finish 4. Crazy race.  Went in with no expectations.  Just planned to run hard.  Did not kill myself on the climbs.  Pushed the downhills hard.  Did not take any shortcuts.  Probably got some poison oak.  Almost fell once.  There were some scary descents.  Completely exhausted when I finished, so I think I ran as fast and as hard as was possible on this day.  Satisfied.  Already looking forward to next year.')
 Run.create(user_id:1, run_type:0, time_date: DateTime.new(2014,6,8,8,50,0,'-7'), distance:2, city:'Mill Valley', state:'CA', title:'Warm-up', description:'Out and back wtih Tyler. Feeling a little tired.')
