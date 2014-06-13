@@ -14,7 +14,7 @@ u1 = User.new(email: "ted@gmail.com",
               gender: "1",
               city: "Stoneham",
               state: "MA",
-              avatar: "https://avatars3.githubusercontent.com/u/5546294"
+              avatar: "https://s3-us-west-1.amazonaws.com/finalproject94122/github.png"
 )
 u1.password = "ted"
 u1.save
@@ -25,7 +25,7 @@ u2 = User.new(email: "katie@gmail.com",
               gender: "2",
               city: "Tualatin",
               state: "OR",
-              avatar: "https://github.com/identicons/tedbreen.png"
+              avatar: "https://s3-us-west-1.amazonaws.com/finalproject94122/katie.jpg"
 )
 u2.password = "katie"
 u2.save
