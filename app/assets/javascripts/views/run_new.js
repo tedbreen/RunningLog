@@ -9,7 +9,7 @@ window.Strava.Views.RunNew = Backbone.View.extend({
     $('body').scrollTop(0);
     var renderedContent = this.template();
     this.$el.html( renderedContent );
-    this.$('input#run-date').datepicker({ showAnim: "fold" });
+    this.$('input#run-date').datepicker();
     return this;
   },
 

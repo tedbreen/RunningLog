@@ -1,3 +1,3 @@
-Final project for App Academy.
+Users log runs and share progress with friends.
 
-Strava clone (www.strava.com)
+Backbone.js app with a REST API built on Rails.
