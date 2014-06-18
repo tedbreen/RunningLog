@@ -52,15 +52,15 @@ u4 = User.new(email: "kevin@email.com",
 u4.password = "kevin"
 u4.save
 
-u5 = User.new(email: "matt@email.com",
-              fname: "Matt",
+u5 = User.new(email: "mathew@email.com",
+              fname: "Mathew",
               lname: "Weissinger",
               gender: "0",
               city: "Northampton",
               state: "MA",
               avatar: "https://s3-us-west-1.amazonaws.com/finalproject94122/avatars/bric.jpg"
 )
-u5.password = "matt"
+u5.password = "mathew"
 u5.save
 
 u6 = User.new(email: "jesse@email.com",
