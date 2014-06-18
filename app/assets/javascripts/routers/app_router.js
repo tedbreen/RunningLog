@@ -26,7 +26,6 @@ window.Strava.Routers.AppRouter = Backbone.Router.extend({
 
   userShow: function(id) {
     var showModel = Strava.Collections.users.getOrFetch(id);
-    showModel.runs().fetch();
 
     var showView = new Strava.Views.UserShow({
       model: showModel

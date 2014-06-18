@@ -1,0 +1,24 @@
+<table class="user-runs">
+<tr class="headers">
+  <td>Date</td>
+  <td>Time</td>
+  <td>Location</td>
+  <td>Type</td>
+  <td>Title</td>
+  <td>Distance</td>
+</tr>
+<% runs.each( function(run) { %>
+<tr>
+  <td><%= run.displayDate() %></td>
+  <td><%= run.displayTime() %></td>
+  <td><%= run.escape('city') + ", " + run.escape('state') %></td>
+  <td><%= run.runType() %></td>
+  <td><%= run.escape('title') %></td>
+  <td><%= run.escape('distance') %></td>
+</tr>
+<%  }) %>
+</table>
+
+<div class="btn-group" id="next-page-button">
+<button type="button" class="btn btn-default next-page-button">More posts &raquo;</button>
+</div>

@@ -99,6 +99,12 @@ table.user-show {
   }
 }
 
+table.user-runs {
+  .headers {
+    font-weight: bold;
+  }
+}
+
 
 //NEW RUN UPLOAD PAGE
 div.panel#add-run {
