@@ -10,10 +10,10 @@ window.Strava.Views.UserShow = Backbone.View.extend({
     var params = $(event.currentTarget).serializeJSON();
     params['start_date'] = newDate( params['start_date'], "0:01" );
     params['end_date'] = newDate( params['end_date'], "23:59" );
+    params['user_id'] = this.model.get('id');
     $('form #start-date').val("");
     $('form #end-date').val("");
-    console.log(params['start_date']);
-    console.log(params['end_date']);
+    console.log(params);
   },
   
   initialize: function(options){
@@ -26,12 +26,7 @@ window.Strava.Views.UserShow = Backbone.View.extend({
     var renderedContent = this.template({
       user: this.model
     });
-    this.$el.html( renderedContent );
-    
-    // experiment
-    var testView = new Strava.Views.Test();
-    this.$("#child-views").html(testView.render().$el);
-    
+    this.$el.html( renderedContent );    
     return this;
   }
 })

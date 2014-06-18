@@ -45,19 +45,6 @@ class Api::RunsController < ApplicationController
       render :json => @run.errors.full_messages
     end
   end
-  
-  #custom route
-  def date_range
-    @runs = Run.where(:time_date => DateTime.parse(params[:start_date])..DateTime.parse(params[:end_date])).
-                      order(:time_date => :desc).page(params[:page]
-    )
-
-    render :json => {
-      :models => @runs,
-      :page => params[:page],
-      :total_pages => @runs.total_pages
-    }
-  end
 
   private
   
